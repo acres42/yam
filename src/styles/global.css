@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🧠 Global resets and utility tweaks */
+:root {
+  /* Add your brand colors here */
+  --color-primary: #62c2ac;
+  --color-secondary: #6457a4;
+  --color-accent: #fdb712;
+  --color-tertiary: #f0127a;
+  --color-bg: #ffffff;
+  --color-text: #1f2937;
+}
+
+body {
+  @apply bg-[var(--color-bg)] text-[var(--color-text)] font-sans antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-semibold;
+}
+
+a {
+  @apply text-[var(--color-primary)] underline hover:no-underline;
+}
