@@ -6,12 +6,13 @@ export default {
   theme: {
     extend: {
       colors: {
+        emergency: "var(--color-emergency)",
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
         accent: "var(--color-accent)",
         tertiary: "var(--color-tertiary)",
         bg: "var(--color-bg)",
-        text: "var(--color-text)"
+        text: "var(--color-text)",
       },
     },
   },
