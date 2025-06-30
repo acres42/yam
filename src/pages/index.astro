@@ -1,11 +1,52 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import carey from '../assets/images/carey-headshot.jpg';
+const siteName = import.meta.env.PUBLIC_SITE_TITLE;
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Young Adult Medicine">
+  <!-- Hero -->
+  <section id="hero" class="py-20 px-4 text-center bg-accent text-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-5xl font-extrabold mb-4">{siteName}</h2>
+      <p class="text-lg mb-6">
+        Compassionate, affirming care for patients 14–24. Telehealth in Las Vegas & beyond.
+      </p>
+      <a href="#contact" class="bg-white text-accent font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition">
+        Book an Appointment
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 px-4 max-w-4xl mx-auto text-center space-y-1">
+    <h3 class="text-3xl font-bold mb-4 text-tertiary">All About YAM</h3>
+    <p class="text-base text-gray-700 text-left">
+      YAM is a telehealth-first practice serving young adults in Nevada with evidence-based, inclusive care.
+		</p>
+    <p class="text-base text-gray-700 text-left">
+			<img <img src="/images/carey-headshot.jpg" alt="Carey, Nurse Practitioner headshot" class="float-left w-32 h-auto mr-4 mb-2 rounded shadow-md" />
+      I’m Carey, a board-certified Pediatric Nurse Practitioner with over a decade of experience caring for children and teens in emergency medicine. After years in fast-paced hospital settings, I created this practice to offer families a more personal, accessible, and empowering approach to healthcare—right from the comfort of home.
+    </p>
+		<p class="text-base text-gray-700 text-left">
+			I specialize in virtual care for children, young adults and college age folks, with a focus on sick visits, preventative wellness, and guidance through life’s big transitions. Whether you're a parent with questions or a teen looking for a safe space to talk, my goal is to provide trusted medical care with empathy, clarity, and zero judgment.
+			This practice is built on relationships, education, and community—because real health starts with feeling seen and heard.
+		</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-4 bg-gray-100 text-center">
+    <h3 class="text-2xl font-semibold text-secondary mb-2">Get in Touch</h3>
+    <h4 class="text-sm text-gray-600 mb-3">
+      Telemedicine Visits: 11am-10pm, Monday-Friday
+		</h4>
+    <p class="text-sm text-gray-600 mb-3">
+      Phone: 702-259-1228
+    </p>
+    <p class="text-sm text-gray-600 mb-3">
+      Email:
+			<a href={"mailto:" + contactEmail} class="text-primary underline">{contactEmail}</a>
+    </p>
+  </section>
+</BaseLayout>

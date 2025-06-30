@@ -1,0 +1,27 @@
+---
+import yamLogo from '../assets/optimized_yam.svg';
+const siteName = import.meta.env.PUBLIC_SITE_TITLE;
+---
+
+<header class="bg-primary text-white shadow-md relative z-30 drop-shadow-2xl">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Site Name + Logo -->
+    <div class="flex items-center space-x-4">
+      <h1 class="text-xl font-bold">{siteName}</h1>
+
+      <!-- Overhanging logo image -->
+      <img
+        src={yamLogo.src}
+        alt="YAM Logo"
+        class="w-20 h-20 mt-3 drop-shadow-[0_0_3px_white]"
+      />
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="space-x-4 text-sm sm:text-base">
+      <a href="#hero" class="text-secondary font-semibold hover:underline">Home</a>
+      <a href="#about" class="text-secondary font-semibold hover:underline">About</a>
+      <a href="#contact" class="text-secondary font-semibold hover:underline">Contact</a>
+    </nav>
+  </div>
+</header>

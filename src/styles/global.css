@@ -22,5 +22,5 @@ h1, h2, h3, h4 {
 }
 
 a {
-  @apply text-[var(--color-primary)] underline hover:no-underline;
+  @apply text-[var(--color-primary)] hover:underline;
 }
