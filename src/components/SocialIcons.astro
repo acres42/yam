@@ -1,13 +1,18 @@
+---
+const instagram = import.meta.env.PUBLIC_INSTAGRAM_LINK;
+const tiktok = import.meta.env.PUBLIC_TIKTOK_LINK;
+const youtube = import.meta.env.PUBLIC_YOUTUBE_LINK;
+---
 <!-- Contact Social Icons -->
 <div class="bg-tertiary py-8 p- text-white">
   <div class="flex justify-center gap-6 text-2xl">
     <p class="text-xl text-secondary">Follow me at <span class="font-bold text-2xl text-bg">askNPCarey</span></p>
-    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+    <a href={instagram} target="_blank" aria-label="Instagram">
       <iconify-icon icon="mdi:instagram" class="w-6 h-6 hover:text-accent transition"></iconify-icon>
     </a>
-    <a href="https://tiktok.com " target="_blank" aria-label="TikTok">
+    <a href={tiktok} target="_blank" aria-label="TikTok">
       <iconify-icon icon="simple-icons:tiktok" class="w-6 h-6 hover:text-accent transition"></iconify-icon>
-    <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+    <a href={youtube} target="_blank" aria-label="YouTube">
       <iconify-icon icon="mdi:youtube" class="w-6 h-6 hover:text-accent transition"></iconify-icon>
     </a>
   </div>

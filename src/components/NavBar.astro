@@ -1,27 +1,75 @@
 ---
-import yamLogo from '../assets/optimized_yam.svg';
-const siteName = import.meta.env.PUBLIC_SITE_TITLE;
+import yamLogo from '../assets/logos/optimized_yam.svg';
+
+const siteName = import.meta.env.PUBLIC_SITE_TITLE
+const instagram = import.meta.env.PUBLIC_INSTAGRAM_LINK
+const tiktok = import.meta.env.PUBLIC_TIKTOK_LINK
+const youtube = import.meta.env.PUBLIC_YOUTUBE_LINK
 ---
 
-<header class="bg-emergency text-white shadow-md relative z-30 drop-shadow-2xl">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Site Name + Logo -->
-    <div class="flex items-center space-x-4">
-      <h1 class="text-xl font-bold">{siteName}</h1>
+<header
+	class='bg-emergency text-bg shadow-md relative z-30 drop-shadow-2xl'
+>
+	<div
+		class='max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4'
+	>
+		<!-- Site Name + Logo -->
+		<div class='flex items-center gap-2 flex-wrap max-w-full'>
+			<h1 class='text-xl font-bold whitespace-nowrap'>
+				{siteName}
+			</h1>
+			<img
+				src={yamLogo.src}
+				alt='YAM Logo'
+				class='w-20 h-20 mt-3 transition-transform duration-300 ease-in-out hover:scale-110'
+			/>
+		</div>
+		<!-- Navigation and Social Icons Block -->
+		<div class='flex flex-col sm:items-end text-sm sm:text-base'>
+			<!-- Navigation Links -->
+			<nav class='space-x-4 mb-2'>
+				<a
+					href='#hero'
+					class='text-bg font-semibold hover:text-primary hover:no-underline'
+					>Home</a
+				>
+				<a
+					href='#about'
+					class='text-bg font-semibold hover:text-primary hover:no-underline'
+					>About</a
+				>
+				<a
+					href='#contact'
+					class='text-bg font-semibold hover:text-primary hover:no-underline'
+					>Contact</a
+				>
+			</nav>
 
-      <!-- Overhanging logo image -->
-      <img
-        src={yamLogo.src}
-        alt="YAM Logo"
-        class="w-20 h-20 mt-3 drop-shadow-[0_0_3px_white]"
-      />
-    </div>
-
-    <!-- Navigation Links -->
-    <nav class="space-x-4 text-sm sm:text-base">
-      <a href="#hero" class="text-primary font-semibold hover:underline">Home</a>
-      <a href="#about" class="text-primary font-semibold hover:underline">About</a>
-      <a href="#contact" class="text-primary font-semibold hover:underline">Contact</a>
-    </nav>
-  </div>
+			<!-- Social Media Icons -->
+			<div class='flex items-center gap-4 text-2xl'>
+				<p class='text-secondary text-base'>
+					Follow me at<span class='font-bold text-white'
+						>@askNPCarey</span>
+				</p>
+				<a href={instagram} target='_blank' aria-label='Instagram'>
+					<iconify-icon
+						icon='mdi:instagram'
+						class='w-6 h-6 text-tertiary hover:text-accent transition'
+					></iconify-icon>
+				</a>
+				<a href={tiktok} target='_blank' aria-label='TikTok'>
+					<iconify-icon
+						icon='simple-icons:tiktok'
+						class='text-tertiary w-6 h-6 hover:text-accent transition'
+					></iconify-icon>
+				</a>
+				<a href={youtube} target='_blank' aria-label='YouTube'>
+					<iconify-icon
+						icon='mdi:youtube'
+						class='text-tertiary w-6 h-6 hover:text-accent transition'
+					></iconify-icon>
+				</a>
+			</div>
+		</div>
+	</div>
 </header>

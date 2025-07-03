@@ -1,17 +1,23 @@
 ---
+// index.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
-import carey from '../assets/images/carey-headshot.jpg';
+import carey_headshot from '../assets/headshots/carey_headshot.jpg';
+import hello_there from '../assets/hero/hello_there.jpg';
+import family72 from '../assets/marketing/family72.jpg';
+import family75 from '../assets/marketing/family75.jpg';
+
 const siteName = import.meta.env.PUBLIC_SITE_TITLE;
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
 ---
 
 <BaseLayout title="Young Adult Medicine">
-  <!-- Hero -->
-  <section id="hero" class="py-20 px-4 text-center bg-accent text-white">
-    <div class="max-w-3xl mx-auto">
+
+  <!-- HERO Section with Background Image -->
+  <section id="hero" class="py-20 px-4 text-center text-white bg-cover bg-center" style={`background-image: url(${hello_there.src})`}>
+    <div class="max-w-3xl mx-auto bg-black/50 p-6 rounded-md">
       <h2 class="text-5xl font-extrabold mb-4">{siteName}</h2>
       <p class="text-lg mb-6">
-        Compassionate, affirming care for patients from birth–21. Telehealth in Las Vegas & all of Nevada.
+        Compassionate, affirming care for patients 14–24. Telehealth in Las Vegas & beyond.
       </p>
       <a href="#contact" class="bg-white text-accent font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition">
         Book an Appointment
@@ -19,34 +25,43 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
     </div>
   </section>
 
-  <!-- About -->
+  <!-- ABOUT Section -->
   <section id="about" class="py-16 px-4 max-w-4xl mx-auto text-center space-y-1">
     <h3 class="text-3xl font-bold mb-4 text-tertiary">All About YAM</h3>
+
     <p class="text-base text-gray-700 text-left">
+      <img src={family72.src} width={family72.width} height={family72.height}  alt="Family lifestyle photo, mom dad and kids" class="float-right w-52 h-auto ml-4 mb-2 rounded shadow-md" />
       YAM is a telehealth-first practice serving young adults in Nevada with evidence-based, inclusive care.
-		</p>
+    </p>
+
     <p class="text-base text-gray-700 text-left">
-			<img <img src="/images/carey-headshot.jpg" alt="Carey, Nurse Practitioner headshot" class="float-left w-32 h-auto mr-4 mb-2 rounded shadow-md" />
+      <img src={carey_headshot.src} width={carey_headshot.width} height={carey_headshot.height} alt="Carey Roselee, Pediatric Nurse Practitioner portrait" class="float-left w-32 h-auto mr-4 mb-2 rounded shadow-md" />
       I’m Carey, a board-certified Pediatric Nurse Practitioner with over a decade of experience caring for children and teens in emergency medicine. After years in fast-paced hospital settings, I created this practice to offer families a more personal, accessible, and empowering approach to healthcare—right from the comfort of home.
     </p>
-		<p class="text-base text-gray-700 text-left">
-			I specialize in virtual care for children, young adults and college age folks, with a focus on sick visits, preventative wellness, and guidance through life’s big transitions. Whether you're a parent with questions or a teen looking for a safe space to talk, my goal is to provide trusted medical care with empathy, clarity, and zero judgment.
-			This practice is built on relationships, education, and community—because real health starts with feeling seen and heard.
-		</p>
+
+    <p class="text-base text-gray-700 text-left">
+      I specialize in virtual care for children, young adults and college age folks, with a focus on sick visits, preventative wellness, and guidance through life’s big transitions. Whether you're a parent with questions or a teen looking for a safe space to talk, my goal is to provide trusted medical care with empathy, clarity, and zero judgment.
+      This practice is built on relationships, education, and community—because real health starts with feeling seen and heard.
+    </p>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-4 bg-gray-100 text-center">
-    <h3 class="text-2xl font-semibold text-secondary mb-2">Get in Touch</h3>
-    <h4 class="text-sm text-gray-600 mb-3">
-      Telemedicine Visits: 11am-10pm, Monday-Friday
-		</h4>
-    <p class="text-sm text-gray-600 mb-3">
-      Phone: 702-259-1228
-    </p>
-    <p class="text-sm text-gray-600 mb-3">
-      Email:
-			<a href={"mailto:" + contactEmail} class="text-primary underline">{contactEmail}</a>
-    </p>
+  <!-- CONTACT Section -->
+  <section id="contact" class="py-16 px-4 bg-gray-100 text-center w-full">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto text-center">
+      <img src={family75.src} alt="Family lifestyle photo, mom and daughter" class="w-48 h-auto mb-4 rounded shadow-md float-center md:float-none" />
+      <div>
+        <h3 class="text-2xl font-semibold text-secondary mb-2">Get in Touch</h3>
+        <h4 class="text-sm text-gray-600 mb-3">
+          Telemedicine Visits: 11am–10pm, Monday–Friday
+        </h4>
+        <p class="text-sm text-gray-600 mb-3">
+          Phone: 702-259-1228
+        </p>
+        <p class="text-sm text-gray-600 mb-3">
+          Email:
+          <a href={"mailto:" + contactEmail} class="text-primary underline">{contactEmail}</a>
+        </p>
+      </div>
+    </div>
   </section>
 </BaseLayout>
