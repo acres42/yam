@@ -25,3 +25,45 @@ h1, h2, h3, h4 {
 a {
   @apply text-[var(--color-primary)] hover:underline;
 }
+
+@layer utilities {
+  .debug-breakpoints::after {
+    content: 'xs';
+  }
+
+  @screen sm {
+    .debug-breakpoints::after {
+      content: 'sm';
+    }
+  }
+
+  @screen md {
+    .debug-breakpoints::after {
+      content: 'md';
+    }
+  }
+
+  @screen lg {
+    .debug-breakpoints::after {
+      content: 'lg';
+    }
+  }
+
+  @screen xl {
+    .debug-breakpoints::after {
+      content: 'xl';
+    }
+  }
+
+  @screen 2xl {
+    .debug-breakpoints::after {
+      content: '2xl';
+    }
+  }
+
+  @screen 3xl {
+    .debug-breakpoints::after {
+      content: '3xl';
+    }
+  }
+}
