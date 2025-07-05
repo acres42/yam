@@ -18,11 +18,11 @@ const { contactEmail } = Astro.props;
       </h4>
 
       <p class="text-sm text-gray-600 mb-1">
-        Phone: <a href="tel:7022591228" class="hover:text-primary">702-259-1228</a>
+        Phone: <a href="tel:7022591228" class="font-semibold text-secondary hover:text-primary">702-259-1228</a>
       </p>
       <p class="text-sm text-gray-600">
         Email:
-        <a href=`{"mailto:" + contactEmail}` class="text-secondary font-semibold hover:text-primary hover:no-underline">
+        <a href={"mailto:" + contactEmail} class="text-secondary font-semibold hover:text-primary hover:no-underline">
           {contactEmail}
         </a>
       </p>
