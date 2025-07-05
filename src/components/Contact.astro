@@ -1,6 +1,6 @@
 ---
 import family75 from '../assets/marketing/family75.jpg';
-const { contactEmail } = Astro.props;
+const { contactEmail, schedulingLink } = Astro.props;
 ---
 <section id="contact" class="py-12 px-4 bg-gray-100 text-center w-full">
   <div class="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto">
@@ -33,7 +33,7 @@ const { contactEmail } = Astro.props;
 
       <!-- Centered Scheduling Icon -->
       <a
-        href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_112164"
+        href={schedulingLink}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-secondary hover:text-primary mt-2"
