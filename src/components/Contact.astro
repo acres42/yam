@@ -10,7 +10,7 @@ const { contactEmail } = Astro.props;
       class="w-36 md:w-48 h-auto rounded shadow-md"
     />
 
-    <div class="text-center">
+    <div class="text-center md:text-center">
       <h3 class="text-xl md:text-2xl font-semibold text-secondary mb-2">Get in Touch</h3>
 
       <h4 class="text-sm text-gray-600 mb-2">
@@ -18,14 +18,32 @@ const { contactEmail } = Astro.props;
       </h4>
 
       <p class="text-sm text-gray-600 mb-1">
-        Phone: <a href="tel:7022591228" class="font-semibold text-secondary hover:text-primary">702-259-1228</a>
+        Phone: <a href="tel:7022591228" class="hover:text-primary">702-259-1228</a>
       </p>
-      <p class="text-sm text-gray-600">
+
+      <p class="text-sm text-gray-600 mb-3">
         Email:
-        <a href={"mailto:" + contactEmail} class="text-secondary font-semibold hover:text-primary hover:no-underline">
+        <a
+          href={`mailto:${contactEmail}`}
+          class="text-secondary font-semibold hover:text-primary hover:no-underline"
+        >
           {contactEmail}
         </a>
       </p>
+
+      <!-- Centered Scheduling Icon -->
+      <a
+        href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_112164"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-secondary hover:text-primary mt-2"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M8 7V3m8 4V3M5 11h14M5 19h14M5 15h14M4 7h16v14H4z" />
+        </svg>
+        Book an Appointment
+      </a>
     </div>
   </div>
 </section>

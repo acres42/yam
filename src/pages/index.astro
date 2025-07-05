@@ -8,20 +8,21 @@ import family72 from '../assets/marketing/family72.jpg';
 
 const siteName = import.meta.env.PUBLIC_SITE_TITLE;
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
+const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
 ---
 
 <BaseLayout title="Young Adult Medicine">
 
   <!-- HERO Section with Background Image -->
   <section id="hero" class="py-20 px-4 text-center text-white bg-cover bg-center" style={`background-image: url(${hello_there.src})`}>
-    <div class="max-w-3xl mx-auto bg-black/50 p-6 rounded-md">
+    <div class="max-w-3xl mx-auto bg-black/50 py-12 px-6 rounded-md">
       <h2 class="text-5xl font-extrabold mb-4">{siteName}</h2>
       <p class="text-lg mb-6">
         Compassionate, affirming care for patients from birth-21.
         <br>
         Telehealth visits available in all of Nevada.
       </p>
-      <a href="#contact" class="bg-bg text-secondary font-semibold px-6 py-3 rounded shadow hover:text-primary transition">
+      <a href={schedulingLink} target="_blank" class="bg-bg text-secondary font-semibold px-6 py-3 rounded mb-6 shadow hover:text-primary transition">
         Book an Appointment
       </a>
     </div>
