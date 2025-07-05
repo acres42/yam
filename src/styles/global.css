@@ -23,7 +23,7 @@ h1, h2, h3, h4 {
 }
 
 a {
-  @apply text-[var(--color-primary)] hover:underline;
+  @apply no-underline text-[var(--color-text)];
 }
 
 @layer utilities {

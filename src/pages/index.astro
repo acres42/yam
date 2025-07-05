@@ -1,10 +1,10 @@
 ---
 // index.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/Contact.astro';
 import carey_headshot from '../assets/headshots/carey_headshot.jpg';
 import hello_there from '../assets/hero/hello_there.jpg';
 import family72 from '../assets/marketing/family72.jpg';
-import family75 from '../assets/marketing/family75.jpg';
 
 const siteName = import.meta.env.PUBLIC_SITE_TITLE;
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
@@ -19,7 +19,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
       <p class="text-lg mb-6">
         Compassionate, affirming care for patients from birth-21.
         <br>
-        Telemedicine available in all of Nevada.
+        Telehealth visits available in all of Nevada.
       </p>
       <a href="#contact" class="bg-white text-accent font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition">
         Book an Appointment
@@ -48,22 +48,5 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
   </section>
 
   <!-- CONTACT Section -->
-  <section id="contact" class="py-16 px-4 bg-gray-100 text-center w-full">
-    <div class="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto text-center">
-      <img src={family75.src} alt="Family lifestyle photo, mom and daughter" class="w-48 h-auto mb-4 rounded shadow-md float-center md:float-none" />
-      <div>
-        <h3 class="text-2xl font-semibold text-secondary mb-2">Get in Touch</h3>
-        <h4 class="text-sm text-gray-600 mb-3">
-          Telemedicine Visits: 11am–10pm, Monday–Friday
-        </h4>
-        <p class="text-sm text-gray-600 mb-3">
-          Phone: 702-259-1228
-        </p>
-        <p class="text-sm text-gray-600 mb-3">
-          Email:
-          <a href={"mailto:" + contactEmail} class="text-primary underline">{contactEmail}</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  <Contact {contactEmail}/>
 </BaseLayout>
