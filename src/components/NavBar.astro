@@ -9,8 +9,8 @@ const siteName = import.meta.env.PUBLIC_SITE_TITLE;
   <div class="max-w-6xl mx-auto px-4 py-1 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-y-1 sm:gap-y-4">
 
     <!-- Left block: Logo + Site Name -->
+		<a href="/">
     <div class="flex flex-col items-center sm:flex-row sm:items-center gap-0.5 sm:gap-3">
-			<a href="/">
 				<img
 					src={yamLogo.src}
 					alt="YAM Logo"
@@ -19,8 +19,8 @@ const siteName = import.meta.env.PUBLIC_SITE_TITLE;
 				<h1 class="text-darkblue text-md sm:text-2xl font-semibold text-center sm:text-left leading-tight">
 					{siteName}
 				</h1>
-				</a>
-    </div>
+			</div>
+		</a>
 
     <!-- Right block: Social + Nav -->
     <div class="flex flex-col items-center sm:items-end gap-0.5 sm:gap-1">
