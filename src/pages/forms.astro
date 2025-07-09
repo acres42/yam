@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
+---
+
+<BaseLayout title="Forms - Young Adult Medicine">
+  <section class="py-16 px-4 max-w-3xl mx-auto text-center">
+    <h2 class="text-4xl font-bold text-secondary mb-4">Forms</h2>
+    <div class="bg-primary py-3 rounded-xl">
+      <p class="text-gray-700 mb-6 text-lg">
+      You can download and complete our referral form below.
+      <br />
+      <span class="font-semibold">Email or fax completed forms to us at your convenience.</span>
+    </p>
+    <a
+      href="/forms/ReferralForm.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 bg-secondary text-white font-semibold py-3 px-6 rounded shadow hover:bg-primary transition"
+    >
+      📄 Download Referral Form (PDF)
+    </a>
+    </div>
+
+    <div class="mt-8 text-sm text-gray-600 italic">
+      Phone: (702) 259-1228 · Fax: (775) 490-0161 · Email:
+        <a
+          href={`mailto:${contactEmail}`}
+          class="text-secondary font-semibold hover:text-primary hover:no-underline"
+        >
+          {contactEmail}
+        </a>
+    </div>
+  </section>
+</BaseLayout>
