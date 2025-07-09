@@ -10,14 +10,16 @@ const siteName = import.meta.env.PUBLIC_SITE_TITLE;
 
     <!-- Left block: Logo + Site Name -->
     <div class="flex flex-col items-center sm:flex-row sm:items-center gap-0.5 sm:gap-3">
-      <img
-        src={yamLogo.src}
-        alt="YAM Logo"
-        class="w-8 sm:w-20 h-auto"
-      />
-      <h1 class="text-darkblue text-md sm:text-2xl font-semibold text-center sm:text-left leading-tight">
-        {siteName}
-      </h1>
+			<a href="/">
+				<img
+					src={yamLogo.src}
+					alt="YAM Logo"
+					class="w-8 sm:w-20 h-auto"
+				/>
+				<h1 class="text-darkblue text-md sm:text-2xl font-semibold text-center sm:text-left leading-tight">
+					{siteName}
+				</h1>
+				</a>
     </div>
 
     <!-- Right block: Social + Nav -->
