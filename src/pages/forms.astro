@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
+const telephone = import.meta.env.PUBLIC_CONTACT_TELEPHONE;
+const fax = import.meta.env.PUBLIC_CONTACT_FAX;
 ---
 
 <BaseLayout title="Forms - Young Adult Medicine">
@@ -24,7 +26,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
     </div>
 
     <div class="mt-8 text-sm text-gray-600 italic">
-      Phone: (702) 259-1228 · Fax: (775) 490-0161 · Email:
+      Phone: {telephone} · Fax: {fax} · Email:
         <a
           href={`mailto:${contactEmail}`}
           class="text-secondary font-semibold hover:text-primary hover:no-underline"

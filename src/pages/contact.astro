@@ -1,44 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import family75 from '../assets/marketing/family75.jpg';
+import Contact from '../components/Contact.astro';
 
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
 const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
+const telephone = import.meta.env.PUBLIC_CONTACT_TELEPHONE;
+const fax = import.meta.env.PUBLIC_CONTACT_FAX;
 ---
 
 <BaseLayout title="Contact Us">
-  <section id="contact" class="py-12 px-4 bg-gray-100 text-center w-full">
-    <div class="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto">
-      <img
-        src={family75.src}
-        alt="Family lifestyle photo"
-        class="w-36 md:w-48 h-auto rounded shadow-md"
-      />
-
-      <div class="text-center">
-        <h3 class="text-xl md:text-2xl font-semibold text-secondary mb-2">Get in Touch</h3>
-
-        <p class="text-sm text-gray-600 mb-1">
-          Phone: <a href="tel:7022591228" class="hover:text-primary">702-259-1228</a>
-        </p>
-
-        <p class="text-sm text-gray-600 mb-3">
-          Email:
-          <a href={`mailto:${contactEmail}`} class="text-secondary font-semibold hover:text-primary hover:no-underline">
-            {contactEmail}
-          </a>
-        </p>
-
-        <a href={schedulingLink} target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-secondary hover:text-primary mt-2"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M8 7V3m8 4V3M5 11h14M5 19h14M5 15h14M4 7h16v14H4z" />
-          </svg>
-          Book an Appointment
-        </a>
-      </div>
-    </div>
-  </section>
+  <Contact
+    contactEmail={contactEmail}
+    schedulingLink={schedulingLink}
+    telephone={telephone}
+    fax={fax}
+  />
 </BaseLayout>
