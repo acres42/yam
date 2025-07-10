@@ -1,6 +1,6 @@
 ---
 import family75 from '../assets/marketing/family75.jpg';
-const { contactEmail, schedulingLink, telephone, fax} = Astro.props;
+const { contactEmail, schedulingLink, siteBaseDomain, telephone, fax} = Astro.props;
 ---
 <section id="contact" class="py-12 px-4 bg-gray-100 text-center w-full">
   <div class="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto">
@@ -28,10 +28,10 @@ const { contactEmail, schedulingLink, telephone, fax} = Astro.props;
       <p class="text-sm text-gray-600 mb-3">
         Email:
         <a
-          href={`mailto:${contactEmail}`}
+          href={`mailto:${contactEmail}@${siteBaseDomain}`}
           class="text-secondary font-semibold hover:text-primary hover:no-underline"
         >
-          {contactEmail}
+          {contactEmail}@{siteBaseDomain}
         </a>
       </p>
 

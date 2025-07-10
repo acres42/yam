@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
+const siteBaseDomain = import.meta.env.PUBLIC_SITE_BASE_DOMAIN;
 const telephone = import.meta.env.PUBLIC_CONTACT_TELEPHONE;
 const fax = import.meta.env.PUBLIC_CONTACT_FAX;
 ---
@@ -28,10 +29,10 @@ const fax = import.meta.env.PUBLIC_CONTACT_FAX;
     <div class="mt-8 text-sm text-gray-600 italic">
       Phone: {telephone} · Fax: {fax} · Email:
         <a
-          href={`mailto:${contactEmail}`}
+          href={`mailto:${contactEmail}@${siteBaseDomain}`}
           class="text-secondary font-semibold hover:text-primary hover:no-underline"
         >
-          {contactEmail}
+          {contactEmail}@{siteBaseDomain}
         </a>
     </div>
   </section>

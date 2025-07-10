@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../components/Contact.astro';
 
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
+const siteBaseDomain = import.meta.env.PUBLIC_SITE_BASE_DOMAIN;
 const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
 const telephone = import.meta.env.PUBLIC_CONTACT_TELEPHONE;
 const fax = import.meta.env.PUBLIC_CONTACT_FAX;
@@ -11,8 +12,9 @@ const fax = import.meta.env.PUBLIC_CONTACT_FAX;
 <BaseLayout title="Contact Us">
   <Contact
     contactEmail={contactEmail}
-    schedulingLink={schedulingLink}
-    telephone={telephone}
     fax={fax}
+    schedulingLink={schedulingLink}
+    siteBaseDomain={siteBaseDomain}
+    telephone={telephone}
   />
 </BaseLayout>
