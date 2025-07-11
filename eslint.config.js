@@ -46,9 +46,16 @@ export default [
         sourceType: "module",
       },
     },
-    plugins: { astro },
+    plugins: {
+      astro,
+      "@typescript-eslint": tseslint,
+    },
     rules: {
       ...astro.configs["flat/recommended"][0].rules,
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ],
     },
   },
 
@@ -74,14 +81,22 @@ export default [
   },
 
   {
-    files: ["**/*.{ts,tsx,astro,json}"],
-    plugins: { prettier },
+    files: ["**/*.{js,cjs,mjs,ts,tsx,astro,json,md}"],
+    plugins: {
+      prettier,
+    },
     rules: {
-      "prettier/prettier": "error",
+      "prettier/prettier": "error", // <—— This makes Prettier violations show as ESLint errors
     },
   },
 
   {
-    ignores: ["**/node_modules/**", "**/dist/**", "**/.astro/**", "**/*.d.ts"],
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.astro/**",
+      "**/*.d.ts",
+      "**/*.md",
+    ],
   },
 ];
