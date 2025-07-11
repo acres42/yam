@@ -1,9 +1,8 @@
 {
-  "eslint.useFlatConfig": true,
-  "eslint.validate": ["javascript", "typescript", "astro"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
+  "prettier.useEditorConfig": false,
+  "prettier.configPath": "./.prettier.config.js"
 }

@@ -18,7 +18,10 @@ body {
   @apply bg-[var(--color-bg)] text-[var(--color-text)] font-sans antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   @apply font-semibold;
 }
 
@@ -28,42 +31,42 @@ a {
 
 @layer utilities {
   .debug-breakpoints::after {
-    content: 'xs';
+    content: "xs";
   }
 
   @screen sm {
     .debug-breakpoints::after {
-      content: 'sm';
+      content: "sm";
     }
   }
 
   @screen md {
     .debug-breakpoints::after {
-      content: 'md';
+      content: "md";
     }
   }
 
   @screen lg {
     .debug-breakpoints::after {
-      content: 'lg';
+      content: "lg";
     }
   }
 
   @screen xl {
     .debug-breakpoints::after {
-      content: 'xl';
+      content: "xl";
     }
   }
 
   @screen 2xl {
     .debug-breakpoints::after {
-      content: '2xl';
+      content: "2xl";
     }
   }
 
   @screen 3xl {
     .debug-breakpoints::after {
-      content: '3xl';
+      content: "3xl";
     }
   }
 }

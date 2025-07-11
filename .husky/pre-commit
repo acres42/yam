@@ -1,1 +1,8 @@
-npx lint-staged
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🧼 Running Prettier..."
+npx prettier --check .
+
+echo "🔍 Running ESLint..."
+npx eslint .

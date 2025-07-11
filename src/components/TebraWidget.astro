@@ -1,8 +1,9 @@
 ---
 // No props needed yet
 ---
+
 <script is:inline>
-  (function(){
+  (function () {
     let t = document.createElement("style");
     t.innerText = `.booking-button {
         background-color:#003a43;
@@ -55,15 +56,20 @@
     `;
     document.body.appendChild(n);
 
-    document.getElementById("bookingButton").addEventListener("click", function() {
-      const container = document.getElementById("iframeContainer");
-      const iframe = document.getElementById("bookingIframe");
-      iframe.src = "https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_112164";
-      container.style.display = "block";
-    });
+    document
+      .getElementById("bookingButton")
+      .addEventListener("click", function () {
+        const container = document.getElementById("iframeContainer");
+        const iframe = document.getElementById("bookingIframe");
+        iframe.src =
+          "https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_112164";
+        container.style.display = "block";
+      });
 
-    document.getElementById("iframeContainer").addEventListener("click", function(e) {
-      if (e.target === this) this.style.display = "none";
-    });
+    document
+      .getElementById("iframeContainer")
+      .addEventListener("click", function (e) {
+        if (e.target === this) this.style.display = "none";
+      });
   })();
 </script>

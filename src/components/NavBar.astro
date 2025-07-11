@@ -1,33 +1,46 @@
 ---
-import yamLogo from '../assets/logos/optimized_yam.svg';
+import yamLogo from "../assets/logos/optimized_yam.svg";
+import ScanQRButton from "./ScanQRButton.tsx";
 const siteName = import.meta.env.PUBLIC_SITE_TITLE;
 ---
-<header class="bg-emergency shadow-black-glow z-60">
-  <div class="max-w-6xl mx-auto px-4 py-1 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-y-1 sm:gap-y-4">
 
-    <!-- Left block: Logo + Site Name -->
-		<a href="/">
-    <div class="flex flex-col items-center sm:flex-row sm:items-center gap-0.5 sm:gap-3">
-				<img
-					src={yamLogo.src}
-					alt="YAM Logo"
-					class="w-8 sm:w-20 h-auto"
-				/>
-				<h1 class="text-darkblue text-md sm:text-2xl font-semibold text-center sm:text-left leading-tight">
-					{siteName}
-				</h1>
-			</div>
-		</a>
+<header class="shadow-black-glow z-60 bg-emergency">
+  <div
+    class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-y-1 px-4 py-1 sm:flex-row sm:gap-y-4 sm:py-4"
+  >
+    <!-- Left block -->
+    <a href="/">
+      <div
+        class="flex flex-col items-center gap-0.5 sm:flex-row sm:items-center sm:gap-3"
+      >
+        <img src={yamLogo.src} alt="YAM Logo" class="h-auto w-8 sm:w-20" />
+        <h1
+          class="text-darkblue text-md text-center font-semibold leading-tight sm:text-left sm:text-2xl"
+        >
+          {siteName}
+        </h1>
+      </div>
+    </a>
 
-    <!-- Right block: Social + Nav -->
-    <div class="flex flex-col items-center sm:items-end gap-0.5 sm:gap-1">
-      <!-- <SocialIconsOnly bgColor={bgColor} iconColor={iconColor} /> -->
-      <nav class="flex space-x-2 sm:space-x-4 text-xs sm:text-base">
-        <a href="/" class="text-secondary font-semibold hover:text-primary hover:no-underline">Home</a>
-				<a href="/forms" class="text-secondary font-semibold hover:text-primary hover:no-underline">Forms</a>
-        <a href="/contact" class="text-secondary font-semibold hover:text-primary">Contact</a>
+    <!-- Right block -->
+    <div class="flex flex-col items-center gap-1 sm:items-end">
+      <ScanQRButton client:load />
+      <nav class="flex space-x-2 text-xs sm:space-x-4 sm:text-base">
+        <a
+          href="/"
+          class="font-semibold text-secondary hover:text-primary hover:no-underline"
+          >Home</a
+        >
+        <a
+          href="/forms"
+          class="font-semibold text-secondary hover:text-primary hover:no-underline"
+          >Forms</a
+        >
+        <a
+          href="/contact"
+          class="font-semibold text-secondary hover:text-primary">Contact</a
+        >
       </nav>
     </div>
-
   </div>
 </header>

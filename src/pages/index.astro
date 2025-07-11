@@ -1,21 +1,29 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 import About from "../components/About.astro";
-import hello_there from '../assets/hero/hello_there.jpg';
+import hello_there from "../assets/hero/hello_there.jpg";
 
 const siteName = import.meta.env.PUBLIC_SITE_TITLE;
 const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
 ---
 
 <BaseLayout title="Welcome to Young Adult Medicine">
-  <section id="hero" class="py-20 px-4 text-center text-bg bg-cover bg-center" style={`background-image: url(${hello_there.src})`}>
-    <div class="max-w-3xl mx-auto bg-black/50 py-12 px-6 rounded-md">
-      <h2 class="text-5xl font-extrabold mb-4">{siteName}</h2>
-      <p class="text-lg mb-6">
+  <section
+    id="hero"
+    class="bg-cover bg-center px-4 py-20 text-center text-bg"
+    style={`background-image: url(${hello_there.src})`}
+  >
+    <div class="mx-auto max-w-3xl rounded-md bg-black/50 px-6 py-12">
+      <h2 class="mb-4 text-5xl font-extrabold">{siteName}</h2>
+      <p class="mb-6 text-lg">
         Compassionate, affirming care for patients from birth–21.<br />
         Telehealth visits available in all of Nevada.
       </p>
-      <a href={schedulingLink} target="_blank" class="bg-bg text-secondary font-semibold px-6 py-3 rounded shadow hover:text-primary transition">
+      <a
+        href={schedulingLink}
+        target="_blank"
+        class="rounded bg-bg px-6 py-3 font-semibold text-secondary shadow transition hover:text-primary"
+      >
         Book an Appointment
       </a>
     </div>
