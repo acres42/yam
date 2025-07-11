@@ -12,26 +12,29 @@ export default [
   js.configs.recommended,
 
   {
-  files: ['**/*.ts', '**/*.tsx'],
-  languageOptions: {
-    parser: tsparser,
-    parserOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      project: './tsconfig.json',
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: tsparser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: "./tsconfig.json",
+      },
+      globals: {
+        document: "readonly",
+        window: "readonly",
+        console: "readonly",
+      },
     },
-    globals: {
-      document: 'readonly',
-      window: 'readonly',
-      console: 'readonly',
+    plugins: { "@typescript-eslint": tseslint },
+    rules: {
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ],
     },
   },
-  plugins: { '@typescript-eslint': tseslint },
-  rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-  },
-},
 
   {
     files: ["**/*.astro"],
