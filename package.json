@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "vercel-build-check": "npm run lint && npm run format",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",

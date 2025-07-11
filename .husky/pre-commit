@@ -6,3 +6,4 @@ if [ $RESULT -ne 0 ]; then
   echo "❌ Prettier check failed. Please run 'npx prettier --write .' to fix formatting issues."
   exit 1
 fi
+npm run lint && npm run format
