@@ -97,6 +97,7 @@ export default [
       "**/.astro/**",
       "**/*.d.ts",
       "**/*.md",
+      "prettierrc.config.cjs",
     ],
   },
 ];
