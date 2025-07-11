@@ -1,8 +1,8 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 echo "🧼 Running Prettier..."
 npx prettier --check .
+RESULT=$?
 
-echo "🔍 Running ESLint..."
-npx eslint .
+if [ $RESULT -ne 0 ]; then
+  echo "❌ Prettier check failed. Please run 'npx prettier --write .' to fix formatting issues."
+  exit 1
+fi

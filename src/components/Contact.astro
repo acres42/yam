@@ -22,26 +22,42 @@ const { contactEmail, schedulingLink, siteBaseDomain, telephone, fax } =
       </h3>
 
       <h4 class="mb-2 text-sm text-gray-600">
-        Telemedicine Visits: 11am–10pm, Monday–Friday
+        Telemedicine Visits:
+        <br />
+        11am–8pm, Tuesday-Thursday
+        <br />
+        11am-9pm, First Saturday of the month
       </h4>
 
       <p class="mb-1 text-sm text-gray-600">
-        Phone: <a href={`tel:${telephone}`} class="hover:text-primary"
-          >{telephone}</a
-        >
+        Phone:{" "}
+        <a href={`tel:${telephone}`} class="hover:text-primary">
+          {telephone}
+        </a>
       </p>
 
       <p class="mb-1 text-sm text-gray-600">
-        Fax: <a href={`fax:${fax}`} class="hover:text-primary">{fax}</a>
+        Fax:{" "}
+        <a href={`fax:${fax}`} class="hover:text-primary">
+          {fax}
+        </a>
       </p>
 
       <p class="mb-3 text-sm text-gray-600">
-        Email:
+        Email:{" "}
         <a
-          href={`mailto:${contactEmail}@${siteBaseDomain}`}
+          href={`mailto:${
+            contactEmail.includes("@")
+              ? contactEmail
+              : `${contactEmail}@${siteBaseDomain}`
+          }`}
           class="font-semibold text-secondary hover:text-primary hover:no-underline"
         >
-          {contactEmail}@{siteBaseDomain}
+          {
+            contactEmail.includes("@")
+              ? contactEmail
+              : `${contactEmail}@${siteBaseDomain}`
+          }
         </a>
       </p>
 
@@ -67,6 +83,7 @@ const { contactEmail, schedulingLink, siteBaseDomain, telephone, fax } =
         </svg>
         Book an Appointment
       </a>
+
       <!-- QR Code Component -->
       <div class="mt-6 flex flex-col items-center">
         <p class="mb-2 text-sm text-gray-600">Scan to visit our site:</p>

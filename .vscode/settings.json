@@ -4,5 +4,8 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": false,
   "prettier.useEditorConfig": false,
-  "prettier.configPath": "./.prettier.config.js"
+  "prettier.configPath": "./.prettier.config.js",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
