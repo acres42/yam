@@ -15,6 +15,7 @@
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
+    "useDefineForClassFields": true,
     "types": ["astro/astro-jsx"]
   },
   "include": [

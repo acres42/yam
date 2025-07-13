@@ -1,4 +1,4 @@
-import { sendContactEmail } from "@/utils/sendContactEmail";
+import { sendContactEmail } from "@/utils/sendContactEmail.ts";
 
 export const config = {
   runtime: "edge",
