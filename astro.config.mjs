@@ -6,8 +6,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 const baseUrl = import.meta.env.PUBLIC_SITE_BASE_URL;
 export default defineConfig({
+  output: "server",
   site: `https://${baseUrl}`,
-  adapter: vercel({ edge: true }),
+  adapter: vercel({ runtime: "edge" }),
   integrations: [tailwind(), preact()],
   vite: {
     plugins: [tsconfigPaths()],
