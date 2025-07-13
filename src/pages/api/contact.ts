@@ -1,15 +1,27 @@
-import { sendContactEmail } from "@/utils/sendContactEmail.ts";
+import { sendContactEmail } from "@/utils/sendContactEmail";
 
 export const config = {
   runtime: "edge",
 };
 
-export async function POST(request: Request) {
-  const formData = await request.formData();
+export async function POST(context: { request: Request }) {
+  const { request } = context;
+  const contentType = request.headers.get("content-type") || "";
 
-  const name = formData.get("name")?.toString() ?? "";
-  const email = formData.get("email")?.toString() ?? "";
-  const message = formData.get("message")?.toString() ?? "";
+  let name = "",
+    email = "",
+    message = "";
+
+  if (contentType.includes("application/x-www-form-urlencoded")) {
+    const rawBody = await request.text();
+    const formData = new URLSearchParams(rawBody);
+
+    name = formData.get("name") ?? "";
+    email = formData.get("email") ?? "";
+    message = formData.get("message") ?? "";
+  } else {
+    return new Response("Unsupported content type", { status: 400 });
+  }
 
   try {
     await sendContactEmail({ name, email, message });
@@ -22,7 +34,6 @@ export async function POST(request: Request) {
     });
   } catch (err) {
     console.error("Email send failed:", err);
-
     return new Response(null, {
       status: 302,
       headers: {
@@ -30,4 +41,13 @@ export async function POST(request: Request) {
       },
     });
   }
+}
+
+export async function GET() {
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: "/contact",
+    },
+  });
 }

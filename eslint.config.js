@@ -24,6 +24,7 @@ export default [
         document: "readonly",
         window: "readonly",
         console: "readonly",
+        fetch: "readonly",
       },
     },
     plugins: { "@typescript-eslint": tseslint },
