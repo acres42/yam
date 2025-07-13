@@ -1,3 +1,5 @@
+import animate from "tailwindcss-animate";
+
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}"],
   theme: {
@@ -13,5 +15,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [animate],
 };

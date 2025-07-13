@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import About from "../components/About.astro";
+import ServicesIsland from "@/components/ServicesIsland.tsx";
 import hello_there from "../assets/hero/hello_there.jpg";
 
 const siteName = import.meta.env.PUBLIC_SITE_TITLE;
@@ -28,5 +28,5 @@ const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
       </a>
     </div>
   </section>
-  <About />
+  <ServicesIsland client:load />
 </BaseLayout>
