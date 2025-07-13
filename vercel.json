@@ -5,9 +5,8 @@
     }
   },
   "functions": {
-    "api/**.ts": {
+    "src/pages/api/contact.ts": {
       "runtime": "edge"
     }
-  },
-  "routes": []
+  }
 }
