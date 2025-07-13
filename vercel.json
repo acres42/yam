@@ -1,7 +1,13 @@
 {
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
   "functions": {
-    "src/pages/api/contact.ts": {
+    "api/**.ts": {
       "runtime": "edge"
     }
-  }
+  },
+  "routes": []
 }

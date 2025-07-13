@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
+import vercel from "@astrojs/vercel";
 import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 import tsconfigPaths from "vite-tsconfig-paths";
-import vercel from "@astrojs/vercel";
 
 const baseUrl = import.meta.env.PUBLIC_SITE_BASE_URL;
 export default defineConfig({
