@@ -1,20 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Contact from "../components/Contact.astro";
+import ContactSection from "../components/Contact.astro";
 
-const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL;
-const siteBaseDomain = import.meta.env.PUBLIC_SITE_BASE_DOMAIN;
 const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
 const telephone = import.meta.env.PUBLIC_CONTACT_TELEPHONE;
 const fax = import.meta.env.PUBLIC_CONTACT_FAX;
+const success = Astro.url.searchParams.get("success");
+const error = Astro.url.searchParams.get("error");
 ---
 
 <BaseLayout title="Contact Us">
-  <Contact
-    contactEmail={contactEmail}
+  <ContactSection
     fax={fax}
     schedulingLink={schedulingLink}
-    siteBaseDomain={siteBaseDomain}
     telephone={telephone}
   />
+  {
+    success && (
+      <div class="mx-auto mt-6 max-w-xl rounded bg-green-100 px-4 py-3 text-green-900 shadow">
+        ✅ Thanks for reaching out! We'll be in touch shortly.
+      </div>
+    )
+  }
+
+  {
+    error && (
+      <div class="mx-auto mt-6 max-w-xl rounded bg-red-100 px-4 py-3 text-red-900 shadow">
+        ❌ Something went wrong. Please try again or call us directly at{" "}
+        {telephone}.
+      </div>
+    )
+  }
 </BaseLayout>

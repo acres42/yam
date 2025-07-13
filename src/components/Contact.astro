@@ -1,94 +1,63 @@
 ---
+import QRCodeBlock from "./QRCodeBlock.astro";
 import family75 from "../assets/marketing/family75.jpg";
-import QRCode from "./QRCode";
+import ContactForm from "./ContactForm.astro";
 
-const { contactEmail, schedulingLink, siteBaseDomain, telephone, fax } =
-  Astro.props;
+const { telephone, fax, schedulingLink } = Astro.props;
 ---
 
-<section id="contact" class="w-full bg-gray-100 px-4 py-12 text-center">
+<!-- Outer wrapper -->
+<div class="mx-auto mt-2.5 max-w-4xl px-4">
+  <!-- Aligned block: Contact + Image -->
   <div
-    class="mx-auto flex max-w-4xl flex-col items-center justify-center gap-6 md:flex-row"
+    class="mx-auto mb-8 flex w-full max-w-[36rem] flex-col items-center sm:flex-row sm:justify-center sm:gap-8"
   >
-    <img
-      src={family75.src}
-      alt="Family lifestyle photo, mom and daughter"
-      class="h-auto w-36 rounded shadow-md md:w-48"
-    />
+    <!-- Get in Touch block -->
+    <div class="flex w-full flex-col items-center text-center">
+      <h2 class="mb-2 text-2xl font-bold text-secondary">Get in Touch</h2>
 
-    <div class="text-center md:text-center">
-      <h3 class="mb-2 text-xl font-semibold text-secondary md:text-2xl">
-        Get in Touch
-      </h3>
-
-      <h4 class="mb-2 text-sm text-gray-600">
-        Telemedicine Visits:
-        <br />
-        11am–8pm, Tuesday-Thursday
-        <br />
-        11am-9pm, First Saturday of the month
-      </h4>
-
-      <p class="mb-1 text-sm text-gray-600">
-        Phone:{" "}
-        <a href={`tel:${telephone}`} class="hover:text-primary">
+      <p class="mb-1">
+        Phone:
+        <a
+          class="font-semibold text-secondary hover:text-primary hover:no-underline"
+          href={`tel:${telephone}`}
+        >
           {telephone}
         </a>
       </p>
-
-      <p class="mb-1 text-sm text-gray-600">
-        Fax:{" "}
-        <a href={`fax:${fax}`} class="hover:text-primary">
+      <p class="mb-4">
+        Fax:
+        <a
+          class="font-semibold text-secondary hover:text-primary hover:no-underline"
+          href={`fax:${fax}`}
+        >
           {fax}
         </a>
       </p>
 
-      <p class="mb-3 text-sm text-gray-600">
-        Email:{" "}
-        <a
-          href={`mailto:${
-            contactEmail.includes("@")
-              ? contactEmail
-              : `${contactEmail}@${siteBaseDomain}`
-          }`}
-          class="font-semibold text-secondary hover:text-primary hover:no-underline"
-        >
-          {
-            contactEmail.includes("@")
-              ? contactEmail
-              : `${contactEmail}@${siteBaseDomain}`
-          }
-        </a>
-      </p>
-
-      <!-- Centered Scheduling Icon -->
       <a
         href={schedulingLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-2 inline-flex items-center justify-center gap-2 text-sm font-semibold text-secondary hover:text-primary"
+        class="mb-4 inline-block font-semibold text-secondary hover:text-primary hover:no-underline"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M8 7V3m8 4V3M5 11h14M5 19h14M5 15h14M4 7h16v14H4z"></path>
-        </svg>
-        Book an Appointment
+        📅 Book an Appointment
       </a>
 
-      <!-- QR Code Component -->
-      <div class="mt-6 flex flex-col items-center">
-        <p class="mb-2 text-sm text-gray-600">Scan to visit our site:</p>
-        <QRCode />
+      <!-- QR section -->
+      <div class="scale-[0.8] sm:scale-100">
+        <QRCodeBlock />
       </div>
     </div>
+
+    <!-- Family image -->
+    <img
+      src={family75.src}
+      alt="Family"
+      class="mx-auto w-[30%] rounded shadow-lg sm:m-0 sm:w-[220px] sm:max-w-[240px]"
+    />
   </div>
-</section>
+
+  <!-- Email Form (same max width) -->
+  <div class="mx-auto w-full max-w-[36rem]">
+    <ContactForm />
+  </div>
+</div>

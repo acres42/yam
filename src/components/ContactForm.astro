@@ -1,0 +1,89 @@
+---
+const search = Astro.url?.search ?? "";
+const urlParams = new globalThis.URLSearchParams(search);
+const isSuccess = urlParams.get("success") === "true";
+const isError = urlParams.get("error") === "true";
+---
+
+<form
+  id="contact-form"
+  method="POST"
+  action="/api/contact"
+  class="mx-auto w-full max-w-2xl rounded bg-accent p-6 text-black"
+>
+  <h3 class="mb-4 text-center text-xl font-bold text-black">Email Us</h3>
+
+  {
+    isSuccess && (
+      <div class="mb-4 rounded bg-green-100 px-4 py-2 text-sm text-green-800">
+        Your message was sent successfully!
+      </div>
+    )
+  }
+
+  {
+    isError && (
+      <div class="mb-4 rounded bg-red-100 px-4 py-2 text-sm text-red-800">
+        Something went wrong. Please try again later.
+      </div>
+    )
+  }
+
+  <label for="name" class="mb-1 block text-sm font-semibold">Your Name</label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    required
+    class="mb-4 w-full rounded border border-gray-300 p-2 text-sm"
+  />
+
+  <label for="email" class="mb-1 block text-sm font-semibold">Your Email</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    required
+    class="mb-4 w-full rounded border border-gray-300 p-2 text-sm"
+  />
+
+  <label for="message" class="mb-1 block text-sm font-semibold"
+    >Your Message</label
+  >
+  <textarea
+    id="message"
+    name="message"
+    rows="5"
+    required
+    class="mb-4 w-full rounded border border-gray-300 p-2 text-sm"></textarea>
+
+  <button
+    type="submit"
+    id="submit-button"
+    class="flex w-full items-center justify-center rounded bg-secondary px-4 py-2 font-semibold text-white transition hover:bg-primary"
+  >
+    <span id="button-text">Send Message</span>
+    <svg
+      id="spinner"
+      class="ml-2 hidden h-4 w-4 animate-spin text-white"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        class="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        stroke-width="4"></circle>
+      <path
+        class="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+    </svg>
+  </button>
+</form>
+
+<script type="module" src="/src/scripts/contactFormHandler.ts" is:inline={false}
+></script>
