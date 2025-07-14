@@ -3,7 +3,9 @@ const TelehealthService = {
   WellChecks: "Well Child Checks age 5+",
   Vomiting: "Vomiting, Diarrhea, Constipation",
   ReproHealth: "Reproductive Health counseling including Medication",
-  ADHD: "ADHD evaluation and Medication management",
+  ADHD: "ADHD evaluation and medication management",
+  AnxietyDepressionMoodDisorders:
+    "Anxiety, Depression, and Mood Disorders evaluation and medication management",
   SchoolStress: "School Stress and Peer challenges",
   Transitions:
     "Transition from Middle School to High School OR High School to College",
