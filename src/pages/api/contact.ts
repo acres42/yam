@@ -1,8 +1,4 @@
-import { sendContactEmail } from "@/utils/sendContactEmail";
-
-export const config = {
-  runtime: "edge",
-};
+import { sendContactEmail } from "../../utils/sendContactEmail";
 
 export async function POST(context: { request: Request }) {
   const { request } = context;
@@ -34,6 +30,13 @@ export async function POST(context: { request: Request }) {
     });
   } catch (err) {
     console.error("Email send failed:", err);
+
+    if (import.meta.env.MODE === "development") {
+      return new Response("Failed to send email: " + (err as Error).message, {
+        status: 500,
+      });
+    }
+
     return new Response(null, {
       status: 302,
       headers: {
@@ -41,13 +44,4 @@ export async function POST(context: { request: Request }) {
       },
     });
   }
-}
-
-export async function GET() {
-  return new Response(null, {
-    status: 302,
-    headers: {
-      Location: "/contact",
-    },
-  });
 }
