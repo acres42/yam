@@ -16,7 +16,7 @@ export async function sendContactEmail({
 
   return await resend.emails.send({
     from: "Contact Form <hello@youngadultmedicine.com>",
-    to: "contact@youngadultmedicine.com",
+    to: ["contact@youngadultmedicine.com", "hello@youngadultmedicine.com"],
     subject: `New Contact Form Submission from ${name}`,
     replyTo: email,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
