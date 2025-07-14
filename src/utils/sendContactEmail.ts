@@ -15,7 +15,7 @@ export async function sendContactEmail({
   if (!resendApiKey) throw new Error("Resend API key not set.");
 
   return await resend.emails.send({
-    from: "Contact Form <contact@youngadultmedicine.com>",
+    from: "Contact Form <hello@youngadultmedicine.com>",
     to: "contact@youngadultmedicine.com",
     subject: `New Contact Form Submission from ${name}`,
     replyTo: email,
