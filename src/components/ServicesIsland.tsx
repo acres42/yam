@@ -2,8 +2,10 @@
 import { useEffect } from "preact/hooks";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import servicesList from "@/types/content";
+import { servicesList, nonServicesList } from "@/types/content";
 import StethoscopeIcon from "./StethoscopeIcon.tsx";
+import NoIcon from "./NoIcon.tsx";
+
 export default function ServicesIsland() {
   useEffect(() => {
     AOS.init({
@@ -16,20 +18,19 @@ export default function ServicesIsland() {
   const firstColumn: string[] = [];
   const secondColumn: string[] = [];
   servicesList.forEach((service, index) => {
-    if (index % 2 === 0) {
-      firstColumn.push(service);
-    } else {
-      secondColumn.push(service);
-    }
+    (index % 2 === 0 ? firstColumn : secondColumn).push(service);
+  });
+
+  const notFirstColumn: string[] = [];
+  const notSecondColumn: string[] = [];
+  nonServicesList.forEach((service, index) => {
+    (index % 2 === 0 ? notFirstColumn : notSecondColumn).push(service);
   });
 
   return (
     <section class="mx-auto max-w-5xl px-4 py-12 text-center">
-      <h2 class="text-darkblue mb-12 text-3xl font-bold">
-        Telehealth Services
-      </h2>
-
-      <div class="mx-auto grid w-fit grid-cols-1 items-stretch gap-x-20 gap-y-4 text-left sm:grid-cols-2">
+      <h2 class="text-darkblue mb-12 text-3xl font-bold">What we treat</h2>
+      <div class="mx-auto mb-10 grid w-fit grid-cols-1 items-stretch gap-x-20 gap-y-4 text-left sm:grid-cols-2">
         <ul class="h-full space-y-6">
           {firstColumn.map((service, index) => (
             <li
@@ -43,7 +44,6 @@ export default function ServicesIsland() {
             </li>
           ))}
         </ul>
-
         <ul class="h-full space-y-6">
           {secondColumn.map((service, index) => (
             <li
@@ -54,6 +54,38 @@ export default function ServicesIsland() {
             >
               <StethoscopeIcon class="mt-1 h-5 w-5 text-accent" />
               <span>{service}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <h2 class="text-darkblue mb-12 text-3xl font-bold">
+        What we DO NOT treat
+      </h2>
+      <div class="mx-auto mb-10 grid w-fit grid-cols-1 items-stretch gap-x-20 gap-y-4 text-left sm:grid-cols-2">
+        <ul class="h-full space-y-6">
+          {notFirstColumn.map((nonservice, index) => (
+            <li
+              key={index}
+              class="flex items-start gap-2"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <NoIcon class="mt-1 h-5 w-5 text-red-600" />
+              <span>{nonservice}</span>
+            </li>
+          ))}
+        </ul>
+        <ul class="h-full space-y-6">
+          {notSecondColumn.map((nonservice, index) => (
+            <li
+              key={index + notFirstColumn.length}
+              class="flex items-start gap-2"
+              data-aos="fade-up"
+              data-aos-delay={(index + notFirstColumn.length) * 100}
+            >
+              <NoIcon class="mt-1 h-5 w-5 text-red-600" />
+              <span>{nonservice}</span>
             </li>
           ))}
         </ul>

@@ -28,7 +28,7 @@ form?.addEventListener("submit", async (e) => {
   } catch (err) {
     console.error(err);
     statusMessage!.textContent =
-      "Something went wrong. Please try again later.";
+      "Something went wrong. Please try again later. If the issue persists, please call us directly";
   } finally {
     buttonText!.textContent = "Send Message";
     spinner!.classList.add("hidden");
