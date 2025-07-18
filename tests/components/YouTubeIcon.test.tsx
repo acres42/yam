@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/preact";
 import { describe, it, expect } from "vitest";
-import YouTubeIcon from "../../src/components/YouTubeIcon";
+import YouTubeIcon from "../../src/components/YoutubeIcon";
 
 describe("YouTubeIcon", () => {
   it("renders a link with the default YouTube href", () => {

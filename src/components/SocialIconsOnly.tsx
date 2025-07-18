@@ -2,7 +2,7 @@
 import { SITE } from "../config/site";
 import InstagramIcon from "./InstagramIcon";
 import TikTokIcon from "./TikTokIcon";
-import YouTubeIcon from "./YouTubeIcon";
+import YouTubeIcon from "./YoutubeIcon";
 
 const { instagramUrl, tiktokUrl, youtubeUrl } = SITE;
 
