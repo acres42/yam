@@ -1,7 +1,5 @@
-import { getImageUrl } from "../lib/getImageUrl";
-
-const carey_headshot = getImageUrl("headshots/carey_headshot.jpg");
-const family72 = getImageUrl("marketing/family72.jpg");
+import carey_headshot from "@/assets/headshots/carey_headshot.jpg";
+import family72 from "@/assets/marketing/family72.jpg";
 
 export default function About() {
   return (
@@ -13,7 +11,7 @@ export default function About() {
 
       <p class="text-left text-base text-gray-700">
         <img
-          src={family72}
+          src={family72.src}
           alt="Family lifestyle photo"
           class="float-right mb-2 ml-4 h-auto w-52 rounded shadow-md"
         />
@@ -23,7 +21,7 @@ export default function About() {
 
       <p class="text-left text-base text-gray-700">
         <img
-          src={carey_headshot}
+          src={carey_headshot.src}
           alt="Carey Roselee, Pediatric NP"
           class="float-left mb-2 mr-4 h-auto w-32 rounded shadow-md"
         />
