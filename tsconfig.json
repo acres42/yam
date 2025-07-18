@@ -1,22 +1,23 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@tests/*": ["tests/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
+    "verbatimModuleSyntax": true,
     "lib": ["dom", "esnext"],
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "target": "ESNext",
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
     "useDefineForClassFields": true,
-    "types": ["astro/astro-jsx"]
+    "types": ["astro/astro-jsx", "vitest", "astro/client"]
   },
   "include": [
     ".astro/types.d.ts",
@@ -24,7 +25,10 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.astro",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "src",
+    "tests",
+    "astro-env.d.ts"
   ],
   "exclude": ["dist", "node_modules"]
 }

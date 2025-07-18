@@ -1,47 +1,66 @@
-import { sendContactEmail } from "../../utils/sendContactEmail";
+import { Resend } from "resend";
 
-export async function POST(context: { request: Request }) {
-  const { request } = context;
-  const contentType = request.headers.get("content-type") || "";
+export async function POST(
+  { request }: { request: Request },
+  deps = { resend: new Resend(process.env.RESEND_API_KEY) },
+) {
+  console.log("🚀 API hit");
+  const { resend } = deps;
 
-  let name = "",
-    email = "",
-    message = "";
-
-  if (contentType.includes("application/x-www-form-urlencoded")) {
-    const rawBody = await request.text();
-    const formData = new URLSearchParams(rawBody);
-
-    name = formData.get("name") ?? "";
-    email = formData.get("email") ?? "";
-    message = formData.get("message") ?? "";
-  } else {
-    return new Response("Unsupported content type", { status: 400 });
+  if (request.method !== "POST") {
+    return new Response("Method Not Allowed", { status: 405 });
   }
 
-  try {
-    await sendContactEmail({ name, email, message });
+  if (!request.headers.get("content-type")?.includes("application/json")) {
+    return new Response("Unsupported Content Type", { status: 400 });
+  }
 
+  const { name, email, message } = await request.json();
+
+  if (process.env.NODE_ENV !== "production") {
+    console.log("📩 Incoming contact POST:", { name, email, message });
+  }
+
+  if (!name || !email || !message || !email.includes("@")) {
+    return new Response("Bad Request", { status: 400 });
+  }
+
+  const cleanName = name.replace(/<[^>]*>/g, "");
+  const cleanMessage = message.replace(/<[^>]*>/g, "");
+
+  if (process.env.NODE_ENV !== "production") {
+    console.log("🧼 Cleaned input:", {
+      cleanName,
+      email,
+      cleanMessage,
+    });
+  }
+
+  const result = await resend.emails.send({
+    from: "Contact Form <hello@youngadultmedicine.com>",
+    to: "youngadultmedicine@gmail.com",
+    subject: `New contact from ${cleanName}`,
+    replyTo: email,
+    text: cleanMessage,
+  });
+
+  if (process.env.NODE_ENV !== "production") {
+    console.log("📤 Resend result:", result);
+  }
+
+  if (result.error) {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: "/contact?success=true",
-      },
-    });
-  } catch (err) {
-    console.error("Email send failed:", err);
-
-    if (import.meta.env.MODE === "development") {
-      return new Response("Failed to send email: " + (err as Error).message, {
-        status: 500,
-      });
-    }
-
-    return new Response(null, {
-      status: 302,
-      headers: {
-        Location: "/contact?error=true",
+        Location: "/contact?contact=error",
       },
     });
   }
+
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: "/contact?contact=success",
+    },
+  });
 }

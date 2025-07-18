@@ -1,12 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactSection from "../components/Contact.astro";
+import ContactSection from "../components/Contact";
+import ContactForm from "../components/ContactForm";
 
 const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
 const telephone = import.meta.env.PUBLIC_CONTACT_TELEPHONE;
 const fax = import.meta.env.PUBLIC_CONTACT_FAX;
-const success = Astro.url.searchParams.get("success");
-const error = Astro.url.searchParams.get("error");
+const contactParam = new URL(Astro.request.url).searchParams.get("contact");
+const message =
+  contactParam === "success"
+    ? {
+        text: "✅ Your message was sent successfully.",
+        class:
+          "mb-4 rounded border border-green-300 bg-green-100 p-4 text-green-800",
+      }
+    : contactParam === "error"
+      ? {
+          text: "❌ Something went wrong. Please try again later.",
+          class:
+            "mb-4 rounded border border-red-300 bg-red-100 p-4 text-red-800",
+        }
+      : null;
 ---
 
 <BaseLayout title="Contact Us">
@@ -15,20 +29,6 @@ const error = Astro.url.searchParams.get("error");
     schedulingLink={schedulingLink}
     telephone={telephone}
   />
-  {
-    success && (
-      <div class="mx-auto mt-6 max-w-xl rounded bg-green-100 px-4 py-3 text-green-900 shadow">
-        ✅ Thanks for reaching out! We'll be in touch shortly.
-      </div>
-    )
-  }
-
-  {
-    error && (
-      <div class="mx-auto mt-6 max-w-xl rounded bg-red-100 px-4 py-3 text-red-900 shadow">
-        ❌ Something went wrong. Please try again or call us directly at{" "}
-        {telephone}.
-      </div>
-    )
-  }
+  <ContactForm client:load />
+  {message && <div class={message.class}>{message.text}</div>}
 </BaseLayout>

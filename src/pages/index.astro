@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ServicesIsland from "@/components/ServicesIsland.tsx";
+import ServicesIsland from "@/components/ServicesIsland";
 import hello_there from "../assets/hero/hello_there.jpg";
+import { SITE } from "../config/site";
 
-const siteName = import.meta.env.PUBLIC_SITE_TITLE;
-const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
+const { title, scheduling } = SITE;
 ---
 
 <BaseLayout title="Welcome to Young Adult Medicine">
@@ -14,13 +14,13 @@ const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
     style={`background-image: url(${hello_there.src})`}
   >
     <div class="mx-auto max-w-3xl rounded-md bg-black/50 px-6 py-12">
-      <h2 class="mb-4 text-5xl font-extrabold">{siteName}</h2>
+      <h2 class="mb-4 text-5xl font-extrabold">{title}</h2>
       <p class="mb-6 text-lg">
         Compassionate, affirming care for patients from birth–21.<br />
         Telehealth visits available in all of Nevada.
       </p>
       <a
-        href={schedulingLink}
+        href={scheduling}
         target="_blank"
         class="rounded bg-bg px-6 py-3 font-semibold text-secondary shadow transition hover:text-primary"
       >

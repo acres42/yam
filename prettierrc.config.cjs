@@ -1,5 +1,5 @@
 module.exports = {
-  singleQuote: false, // <-- enforce double quotes
+  singleQuote: false,
   plugins: ["prettier-plugin-astro"],
   overrides: [
     {

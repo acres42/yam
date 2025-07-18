@@ -3,8 +3,8 @@ import { useEffect } from "preact/hooks";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { servicesList, nonServicesList } from "@/types/content";
-import StethoscopeIcon from "./StethoscopeIcon.tsx";
-import NoIcon from "./NoIcon.tsx";
+import StethoscopeIcon from "./StethoscopeIcon";
+import NoIcon from "./NoIcon";
 
 export default function ServicesIsland() {
   useEffect(() => {

@@ -8,24 +8,33 @@ import prettier from "eslint-plugin-prettier";
 import jsonc from "eslint-plugin-jsonc";
 import jsoncParser from "jsonc-eslint-parser";
 
+const commonGlobals = {
+  document: "readonly",
+  window: "readonly",
+  console: "readonly",
+  fetch: "readonly",
+  process: "readonly",
+  setTimeout: "readonly",
+  clearTimeout: "readonly",
+};
+
 export default [
+  // 🔧 Base JS rules
   js.configs.recommended,
 
+  // 🟦 TypeScript
   {
     files: ["**/*.ts", "**/*.tsx"],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
+        ecmaFeatures: { jsx: true },
         ecmaVersion: "latest",
-        sourceType: "module",
+        jsxImportSource: "preact",
         project: "./tsconfig.json",
+        sourceType: "module",
       },
-      globals: {
-        document: "readonly",
-        window: "readonly",
-        console: "readonly",
-        fetch: "readonly",
-      },
+      globals: { ...commonGlobals },
     },
     plugins: { "@typescript-eslint": tseslint },
     rules: {
@@ -37,6 +46,7 @@ export default [
     },
   },
 
+  // 🪐 Astro
   {
     files: ["**/*.astro"],
     languageOptions: {
@@ -45,6 +55,10 @@ export default [
         parser: tsparser,
         ecmaVersion: "latest",
         sourceType: "module",
+      },
+      globals: {
+        ...commonGlobals,
+        URL: "readonly",
       },
     },
     plugins: {
@@ -60,6 +74,7 @@ export default [
     },
   },
 
+  // 🧾 JSON
   {
     files: ["**/*.json"],
     languageOptions: {
@@ -73,6 +88,7 @@ export default [
     },
   },
 
+  // 🎨 Tailwind CSS
   {
     files: ["**/*.{ts,tsx,astro}"],
     plugins: { tailwindcss },
@@ -81,16 +97,45 @@ export default [
     },
   },
 
+  // 💅 Prettier integration
   {
     files: ["**/*.{js,cjs,mjs,ts,tsx,astro,json,md}"],
-    plugins: {
-      prettier,
-    },
+    plugins: { prettier },
     rules: {
-      "prettier/prettier": "error", // <—— This makes Prettier violations show as ESLint errors
+      "prettier/prettier": "error",
     },
   },
 
+  // 🧰 Node-style utils (CommonJS)
+  {
+    files: ["src/utils/**/*.ts"],
+    languageOptions: {
+      globals: {
+        module: true,
+        require: true,
+        __dirname: true,
+        ...commonGlobals,
+      },
+    },
+  },
+
+  // 🧪 Vitest (unit & component tests)
+  {
+    files: ["**/*.test.{ts,tsx,js}"],
+    languageOptions: {
+      globals: {
+        describe: true,
+        it: true,
+        expect: true,
+        beforeEach: true,
+        afterEach: true,
+        vi: true,
+        global: true,
+      },
+    },
+  },
+
+  // 🚫 Ignored paths
   {
     ignores: [
       "**/node_modules/**",

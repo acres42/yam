@@ -1,0 +1,43 @@
+import { getImageUrl } from "../lib/getImageUrl";
+
+const carey_headshot = getImageUrl("headshots/carey_headshot.jpg");
+const family72 = getImageUrl("marketing/family72.jpg");
+
+export default function About() {
+  return (
+    <section
+      id="about"
+      class="mx-auto max-w-4xl space-y-6 px-4 py-16 text-center"
+    >
+      <h2 class="mb-4 text-3xl font-bold text-tertiary">All About YAM</h2>
+
+      <p class="text-left text-base text-gray-700">
+        <img
+          src={family72}
+          alt="Family lifestyle photo"
+          class="float-right mb-2 ml-4 h-auto w-52 rounded shadow-md"
+        />
+        YAM is a telehealth-first practice serving young adults in Nevada with
+        evidence-based, inclusive care.
+      </p>
+
+      <p class="text-left text-base text-gray-700">
+        <img
+          src={carey_headshot}
+          alt="Carey Roselee, Pediatric NP"
+          class="float-left mb-2 mr-4 h-auto w-32 rounded shadow-md"
+        />
+        I’m Carey, a board-certified Pediatric Nurse Practitioner with over a
+        decade of experience caring for children and teens in emergency
+        medicine. I created this practice to offer a more personal, accessible,
+        and empowering approach to healthcare—right from home.
+      </p>
+
+      <p class="text-left text-base text-gray-700">
+        Whether you're a parent with questions or a teen looking for a safe
+        space to talk, my goal is to provide trusted medical care with empathy,
+        clarity, and zero judgment.
+      </p>
+    </section>
+  );
+}

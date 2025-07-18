@@ -1,6 +1,7 @@
 export default function QRCode() {
   return (
     <svg
+      data-testid="qr-code"
       width="37mm"
       height="37mm"
       version="1.1"

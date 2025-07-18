@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css";
-import NavBar from "../components/NavBar.astro";
-import SocialIcons from "../components/SocialIcons.astro";
+import NavBar from "../components/NavBar";
+import SocialIcons from "../components/SocialIcons";
 import TebraWidget from "../components/TebraWidget.astro";
+import { SITE } from "../config/site";
 
-const title = import.meta.env.PUBLIC_SITE_TITLE;
+const title = SITE.title;
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -16,7 +17,7 @@ const title = import.meta.env.PUBLIC_SITE_TITLE;
 
   <body class="bg-bg font-sans text-text">
     <main>
-      <NavBar />
+      <NavBar client:load />
       <slot />
       <TebraWidget />
       <SocialIcons />

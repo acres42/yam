@@ -1,6 +1,6 @@
 const TelehealthService = {
   Fevers: "Fevers, allergies, sore throat, and pinkeye",
-  WellChecks: "Well Child Checks age 5+",
+  WellChecks: "Well Child Checks age 11+",
   Vomiting: "Vomiting, Diarrhea, Constipation",
   ReproHealth: "Reproductive Health counseling including Medication",
   ADHD: "ADHD evaluation and medication management",
