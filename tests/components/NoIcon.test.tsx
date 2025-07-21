@@ -1,4 +1,3 @@
-// tests/components/NoIcon.test.tsx
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/preact";
 import NoIcon from "@/components/NoIcon";
