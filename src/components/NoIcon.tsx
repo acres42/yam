@@ -7,6 +7,7 @@ type Props = {
 export default function NoIcon({ class: className = "" }: Props) {
   return (
     <svg
+      data-testid="no-icon"
       class={className}
       xmlns="http://www.w3.org/2000/svg"
       width="20"

@@ -69,6 +69,6 @@ describe("<Contact />", () => {
     const schedLink = container.querySelector('a[href^="http"]');
     expect(telAnchor?.getAttribute("href")).toBe("tel:");
     expect(faxAnchor?.getAttribute("href")).toBe("fax:");
-    expect(schedLink?.getAttribute("href")).toBe("");
+    expect(schedLink?.getAttribute("href") ?? "").toBe("");
   });
 });
