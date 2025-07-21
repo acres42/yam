@@ -34,3 +34,5 @@ form?.addEventListener("submit", async (e) => {
     spinner!.classList.add("hidden");
   }
 });
+
+export {};
