@@ -1,34 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const openBtn = document.getElementById(
-    "open-qr-btn",
-  ) as HTMLButtonElement | null;
-  const closeBtn = document.getElementById(
-    "close-qr-btn",
-  ) as HTMLButtonElement | null;
-  const modal = document.getElementById("qr-modal") as HTMLDivElement | null;
-
-  if (!openBtn || !closeBtn || !modal) {
-    console.warn("One or more modal elements not found.");
-    return;
-  }
-
-  const hideModal = () => {
-    modal.classList.add("hidden");
-  };
-
-  openBtn.addEventListener("click", (event: MouseEvent) => {
-    event.stopPropagation();
+export default function toggleModal(modal: HTMLElement) {
+  if (modal.classList.contains("hidden")) {
     modal.classList.remove("hidden");
-  });
-
-  closeBtn.addEventListener("click", (event: MouseEvent) => {
-    event.stopPropagation();
-    hideModal();
-  });
-
-  modal.addEventListener("click", (event: MouseEvent) => {
-    if (event.target === modal) {
-      hideModal();
-    }
-  });
-});
+    modal.removeAttribute("aria-hidden");
+  } else {
+    modal.classList.add("hidden");
+    modal.setAttribute("aria-hidden", "true");
+  }
+}
