@@ -39,7 +39,7 @@ export default function ServicesIsland() {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <StethoscopeIcon class="mt-1 h-5 w-5 text-accent" />
+              <StethoscopeIcon class="mt-1 h-5 min-h-5 w-5 min-w-5 shrink-0 text-accent" />
               <span>{service}</span>
             </li>
           ))}
@@ -52,7 +52,7 @@ export default function ServicesIsland() {
               data-aos="fade-up"
               data-aos-delay={(index + firstColumn.length) * 100}
             >
-              <StethoscopeIcon class="mt-1 h-5 w-5 text-accent" />
+              <StethoscopeIcon class="mt-1 h-5 min-h-5 w-5 min-w-5 shrink-0 text-accent" />
               <span>{service}</span>
             </li>
           ))}
@@ -71,7 +71,7 @@ export default function ServicesIsland() {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <NoIcon class="mt-1 h-5 w-5 text-red-600" />
+              <NoIcon class="mt-1 h-5 min-h-5 w-5 min-w-5 shrink-0 text-red-600" />
               <span>{nonservice}</span>
             </li>
           ))}
@@ -84,7 +84,7 @@ export default function ServicesIsland() {
               data-aos="fade-up"
               data-aos-delay={(index + notFirstColumn.length) * 100}
             >
-              <NoIcon class="mt-1 h-5 w-5 text-red-600" />
+              <NoIcon class="mt-1 h-5 min-h-5 w-5 min-w-5 shrink-0 text-red-600" />
               <span>{nonservice}</span>
             </li>
           ))}
