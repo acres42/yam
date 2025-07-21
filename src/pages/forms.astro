@@ -1,33 +1,42 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const telephone = import.meta.env.PUBLIC_CONTACT_TELEPHONE;
-const fax = import.meta.env.PUBLIC_CONTACT_FAX;
+import { formsData } from "@/types/content";
+import { SITE } from "../config/site";
 ---
 
 <BaseLayout title="Forms - Young Adult Medicine">
   <section class="mx-auto max-w-3xl px-4 py-16 text-center">
     <h2 class="mb-4 text-4xl font-bold text-secondary">Forms</h2>
-    <div class="rounded-xl bg-primary py-3">
-      <p class="mb-6 text-lg text-gray-700">
-        You can download and complete our referral form below.
+    <div class="rounded-xl bg-primary px-4 py-6 text-center">
+      <p class="mb-6 text-center text-lg text-gray-700">
+        You can download and complete any of our forms below.
         <br />
         <span class="font-semibold"
           >Email or fax completed forms to us at your convenience.</span
         >
       </p>
-      <a
-        href="/forms/Referral.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 rounded bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary"
+      <ul
+        class="flex flex-col items-center justify-center space-y-4 text-center"
       >
-        📄 Download Referral Form (PDF)
-      </a>
+        {
+          formsData.map(({ label: label, file }) => (
+            <li>
+              <a
+                href={`/forms/${file}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mx-auto inline-flex items-center gap-2 rounded bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary"
+              >
+                📄 Download {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
 
-    <div class="mt-8 text-sm italic text-gray-600">
-      Phone: {telephone} · Fax: {fax}
+    <div class="mt-8 text-center text-sm italic text-gray-600">
+      Phone: {SITE.phone} · Fax: {SITE.fax}
     </div>
   </section>
 </BaseLayout>

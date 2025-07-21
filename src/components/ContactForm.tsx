@@ -1,7 +1,8 @@
 /** @jsxImportSource preact */
 import { useContactForm } from "../hooks/useContactForm";
+import type { JSX } from "preact";
 
-export default function ContactForm() {
+const ContactForm = (): JSX.Element => {
   const {
     name,
     setName,
@@ -13,24 +14,39 @@ export default function ContactForm() {
     handleSubmit,
   } = useContactForm();
 
+  const handleInput =
+    // eslint-disable-next-line no-unused-vars
+    (setter: (value: string) => void) =>
+      (e: JSX.TargetedEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setter(e.currentTarget.value);
+      };
+
   return (
     <form
       onSubmit={handleSubmit}
       class="mx-auto mb-4 w-full max-w-2xl rounded bg-accent p-6 text-black"
+      aria-labelledby="contact-form-heading"
     >
-      <h3 class="mb-4 text-center text-xl font-bold text-black">Email Us</h3>
+      <h3
+        id="contact-form-heading"
+        class="mb-4 text-center text-xl font-bold text-black"
+      >
+        Email Us
+      </h3>
 
-      {status === "success" && (
-        <div class="mb-4 rounded bg-green-100 px-4 py-2 text-sm text-green-800">
-          Your message was sent successfully!
-        </div>
-      )}
+      <div aria-live="polite">
+        {status === "success" && (
+          <div class="mb-4 rounded bg-green-100 px-4 py-2 text-sm text-green-800">
+            Your message was sent successfully!
+          </div>
+        )}
 
-      {status === "error" && (
-        <div class="mb-4 rounded bg-red-100 px-4 py-2 text-sm text-red-800">
-          Something went wrong. Please try again or call us directly.
-        </div>
-      )}
+        {status === "error" && (
+          <div class="mb-4 rounded bg-red-100 px-4 py-2 text-sm text-red-800">
+            Something went wrong. Please try again or call us directly.
+          </div>
+        )}
+      </div>
 
       <label for="name" class="mb-1 block text-sm font-semibold">
         Your Name
@@ -42,7 +58,7 @@ export default function ContactForm() {
         required
         class="mb-4 w-full rounded border border-gray-300 p-2 text-sm"
         value={name}
-        onInput={(e) => setName((e.target as HTMLInputElement).value)}
+        onInput={handleInput(setName)}
       />
 
       <label for="email" class="mb-1 block text-sm font-semibold">
@@ -55,7 +71,7 @@ export default function ContactForm() {
         required
         class="mb-4 w-full rounded border border-gray-300 p-2 text-sm"
         value={email}
-        onInput={(e) => setEmail((e.target as HTMLInputElement).value)}
+        onInput={handleInput(setEmail)}
       />
 
       <label for="message" class="mb-1 block text-sm font-semibold">
@@ -68,7 +84,7 @@ export default function ContactForm() {
         required
         class="mb-4 w-full rounded border border-gray-300 p-2 text-sm"
         value={message}
-        onInput={(e) => setMessage((e.target as HTMLTextAreaElement).value)}
+        onInput={handleInput(setMessage)}
       ></textarea>
 
       <button
@@ -79,4 +95,6 @@ export default function ContactForm() {
       </button>
     </form>
   );
-}
+};
+
+export default ContactForm;

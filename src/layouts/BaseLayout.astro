@@ -5,7 +5,7 @@ import SocialIcons from "../components/SocialIcons";
 import TebraWidget from "../components/TebraWidget.astro";
 import { SITE } from "../config/site";
 
-const title = SITE.title;
+const { title = SITE.title } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
