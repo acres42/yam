@@ -38,6 +38,14 @@ const NonOfferedService = {
 
 export const nonServicesList: string[] = Object.values(NonOfferedService);
 
+const Forms = [
+  { label: "Referral Form", file: "YAM_Referral.pdf" },
+  { label: "HIPAA Notice", file: "YAM_HIPAA_Privacy_Practices.pdf" },
+  { label: "Privacy Policy", file: "YAM_Privacy_Policy.pdf" },
+  { label: "Terms and Conditions", file: "YAM_Terms_and_Conditions.pdf" },
+];
+
+export const formsData: { label: string; file: string }[] = Forms;
 export type ContactInfo = {
   name: string;
   email: string;

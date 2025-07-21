@@ -1,35 +1,38 @@
 import family75 from "../assets/marketing/family75.jpg";
 
-type ContactProps = {
+interface ContactProps {
   telephone: string;
   fax: string;
   schedulingLink: string;
-};
+}
 
 export default function Contact({
   telephone,
   fax,
   schedulingLink,
-}: ContactProps) {
+}: ContactProps): JSX.Element {
   return (
-    <div class="mx-auto mt-2.5 max-w-4xl px-4">
-      <div class="mx-auto mb-8 flex w-full max-w-[36rem] flex-col items-center sm:flex-row sm:justify-center sm:gap-8">
-        <div class="flex w-full flex-col items-center text-center">
-          <h2 class="mb-2 text-2xl font-bold text-secondary">Get in Touch</h2>
+    <div className="mx-auto mt-2.5 max-w-4xl px-4">
+      <div className="mx-auto mb-8 flex w-full max-w-[36rem] flex-col items-center sm:flex-row sm:justify-center sm:gap-8">
+        <div className="flex w-full flex-col items-center text-center">
+          <h2 className="mb-2 text-2xl font-bold text-secondary">
+            Get in Touch
+          </h2>
 
-          <p class="mb-1">
+          <p className="mb-1">
             Phone:{" "}
             <a
-              class="font-semibold text-secondary hover:text-primary hover:no-underline"
+              className="font-semibold text-secondary hover:text-primary hover:no-underline"
               href={`tel:${telephone}`}
             >
               {telephone}
             </a>
           </p>
-          <p class="mb-4">
+
+          <p className="mb-4">
             Fax:{" "}
             <a
-              class="font-semibold text-secondary hover:text-primary hover:no-underline"
+              className="font-semibold text-secondary hover:text-primary hover:no-underline"
               href={`fax:${fax}`}
             >
               {fax}
@@ -38,7 +41,7 @@ export default function Contact({
 
           <a
             href={schedulingLink}
-            class="mb-4 inline-block font-semibold text-secondary hover:text-primary hover:no-underline"
+            className="mb-4 inline-block font-semibold text-secondary hover:text-primary hover:no-underline"
           >
             📅 Book an Appointment
           </a>
@@ -47,11 +50,9 @@ export default function Contact({
         <img
           src={family75.src}
           alt="Family"
-          class="mx-auto w-[30%] rounded shadow-lg sm:m-0 sm:w-[220px] sm:max-w-[240px]"
+          className="mx-auto w-[30%] rounded shadow-lg sm:m-0 sm:w-[220px] sm:max-w-[240px]"
         />
       </div>
-
-      <div class="mx-auto w-full max-w-[36rem]"></div>
     </div>
   );
 }

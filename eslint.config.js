@@ -34,7 +34,7 @@ export default [
         project: "./tsconfig.json",
         sourceType: "module",
       },
-      globals: { ...commonGlobals },
+      globals: { ...commonGlobals, JSX: "readonly" },
     },
     plugins: { "@typescript-eslint": tseslint },
     rules: {

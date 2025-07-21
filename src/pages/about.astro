@@ -1,8 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import About from "../components/About";
+import { About } from "@/components/About";
+
+const pageTitle = "About YAM | Telehealth for Young Adults";
+const pageDescription =
+  "Learn about our telehealth-first practice serving Nevada with evidence-based, inclusive care for young adults.";
 ---
 
-<BaseLayout title="About">
-  <About />
+<BaseLayout title={pageTitle} description={pageDescription} canonical="/about">
+  <main id="main-content" class="container mx-auto">
+    <About />
+  </main>
 </BaseLayout>

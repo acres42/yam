@@ -1,1 +1,1 @@
-/// <reference path="../.astro/types.d.ts" />
+import "./types/jsx";

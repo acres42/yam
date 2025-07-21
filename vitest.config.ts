@@ -32,7 +32,7 @@ export default defineConfig({
     },
     includeSource: ["src/**/*.{ts,tsx,js,jsx,astro}"],
     coverage: {
-      provider: "istanbul",
+      provider: "v8",
       reporter: ["text", "html", "lcov"],
       all: true,
       exclude: [
