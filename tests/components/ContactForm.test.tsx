@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/preact";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import ContactForm from "@/components/ContactForm";
 
@@ -7,7 +7,7 @@ describe("ContactForm", () => {
   it("renders all fields and a submit button", async () => {
     render(<ContactForm />);
     expect(await screen.findByLabelText(/name/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+    expect(screen.getByLabelText("Your Email")).toBeInTheDocument();
     expect(screen.getByLabelText(/message/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /send/i })).toBeInTheDocument();
   });
@@ -16,7 +16,10 @@ describe("ContactForm", () => {
     render(<ContactForm />);
 
     await userEvent.type(screen.getByLabelText(/name/i), "Test User");
-    await userEvent.type(screen.getByLabelText(/email/i), "test@example.com");
+    await userEvent.type(
+      screen.getByLabelText("Your Email"),
+      "test@example.com",
+    );
     await userEvent.type(
       screen.getByLabelText(/message/i),
       "This is a test message.",

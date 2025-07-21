@@ -1,9 +1,17 @@
-export default function QRCode() {
+import type { JSX } from "preact";
+
+type QRCodeProps = {
+  value?: string;
+  size?: number;
+};
+
+const QRCode = ({ value = "", size = 128 }: QRCodeProps): JSX.Element => {
   return (
     <svg
       data-testid="qr-code"
-      width="37mm"
-      height="37mm"
+      width={size}
+      height={size}
+      value={value}
       version="1.1"
       id="svg416"
       xmlns="http://www.w3.org/2000/svg"
@@ -427,4 +435,5 @@ export default function QRCode() {
       <rect x="120.94489" y="120.94489" width="1mm" height="1mm" id="rect416" />
     </svg>
   );
-}
+};
+export default QRCode;
