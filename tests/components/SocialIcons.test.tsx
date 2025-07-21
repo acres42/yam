@@ -18,6 +18,7 @@ describe("<SocialIcons />", () => {
     const links = screen.getAllByRole("link");
     expect(links.length).toBeGreaterThan(0);
   });
+
   it("does not render unrelated text", () => {
     render(<SocialIcons />);
     expect(screen.queryByText(/subscribe now/i)).not.toBeInTheDocument();
