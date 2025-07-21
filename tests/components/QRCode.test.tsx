@@ -1,4 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/preact";
+import { describe, it, expect } from "vitest";
 import QRCode from "@/components/QRCode";
 
 describe("QRCode", () => {
@@ -18,8 +19,13 @@ describe("QRCode", () => {
   it("renders at least one <rect> element", async () => {
     render(<QRCode value="test" />);
     await waitFor(() => {
-      const rects = screen.getByTestId("qr-code").querySelectorAll("rect");
-      expect(rects.length).toBeGreaterThan(0);
+      const el = screen.getByTestId("qr-code");
+      if (el instanceof SVGSVGElement) {
+        const rects = el.querySelectorAll("rect");
+        expect(rects.length).toBeGreaterThan(0);
+      } else {
+        throw new Error("Element is not an instance of SVGSVGElement");
+      }
     });
   });
 
