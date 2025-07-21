@@ -1,7 +1,4 @@
-import { Resend } from "resend";
-
-const resendApiKey = import.meta.env.RESEND_API_KEY;
-const resend = new Resend(resendApiKey);
+import { resend } from "@/lib/resend";
 
 export async function sendContactEmail({
   name,
@@ -12,8 +9,6 @@ export async function sendContactEmail({
   email: string;
   message: string;
 }) {
-  if (!resendApiKey) throw new Error("Resend API key not set.");
-
   const emailPayload = {
     from: "Contact Form <hello@youngadultmedicine.com>",
     to: "youngadultmedicine@gmail.com",
@@ -26,10 +21,15 @@ export async function sendContactEmail({
 
   try {
     const result = await resend.emails.send(emailPayload);
-    console.log("✅ Email sent successfully:", result);
     return result;
-  } catch (error) {
-    console.error("❌ Failed to send email:", error);
-    throw error;
+  } catch (err: any) {
+    return {
+      data: null,
+      error: {
+        message: err.message,
+        name: err.name ?? "unexpected_error",
+        statusCode: err.statusCode ?? 500,
+      },
+    };
   }
 }
