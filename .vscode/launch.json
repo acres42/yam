@@ -6,6 +6,20 @@
       "name": "Development server",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Vitest Unit Tests",
+      "program": "${workspaceFolder}/node_modules/vitest/vitest.mjs",
+      "args": ["run", "--watch=false"],
+      "autoAttachChildProcesses": true,
+      "smartStep": true,
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "NODE_ENV": "test"
+      },
+      "console": "integratedTerminal"
     }
   ]
 }

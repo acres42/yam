@@ -1,4 +1,4 @@
-import { toggleModal } from "./toggleModal";
+import toggleModal from "./toggleModal";
 
 export function initToggleModal() {
   const openBtn = document.getElementById(

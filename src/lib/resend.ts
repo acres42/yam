@@ -1,5 +1,7 @@
 import { Resend } from "resend";
 
-const resendApiKey = import.meta.env.RESEND_API_KEY;
-if (!resendApiKey) throw new Error("Resend API key not set.");
-export const resend = new Resend(resendApiKey);
+const apiKey = process.env.RESEND_API_KEY;
+if (!apiKey) throw new Error("Resend API key not set.");
+
+const resend = new Resend(apiKey);
+export default resend;
