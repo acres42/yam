@@ -20,6 +20,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["astro"],
   },
+  logLevel: "info",
   test: {
     globals: true,
     environment: "jsdom",
