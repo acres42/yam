@@ -27,7 +27,7 @@ const NonOfferedService = {
   Seizures: "Any Seizure disorders",
   Diabetes: "Any Diabetes",
   ComplexEndicronology:
-    "Complex endicrinology concerns like thyroid and juvenile arthritis",
+    "Complex endocrinology concerns like thyroid and juvenile arthritis",
   UTI: "UTIs in children under 5",
   Fevers: "Any fever in children under 2 months",
   Breathing:
