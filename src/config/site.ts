@@ -10,7 +10,7 @@ export interface SiteConfig {
   youtubeUrl?: string;
   scheduling?: string;
   url: string;
-  logo?: string;
+  logo?: any;
 }
 
 export const SITE: SiteConfig = {
@@ -26,10 +26,6 @@ export const SITE: SiteConfig = {
   scheduling:
     import.meta.env.PUBLIC_SCHEDULING_LINK ||
     "https://www.tebra.com/care/provider/carey-roselee-rn-msn-cpnp-bc-1093181406",
-  url:
-    (import.meta.env.PUBLIC_SITE_URL && import.meta.env.PUBLIC_SITE_URL) ||
-    (import.meta.env.PUBLIC_SITE_BASE_DOMAIN
-      ? `https://${import.meta.env.PUBLIC_SITE_BASE_DOMAIN}`
-      : "http://localhost:4321"),
+  url: import.meta.env.PUBLIC_SITE_URL || "https://www.youngadultmedicine.com",
   logo: yamLogo,
 };

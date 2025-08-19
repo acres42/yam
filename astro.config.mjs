@@ -7,7 +7,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   output: "server",
-  site: "https://youngadultmedicine.com",
+  site: "https://www.youngadultmedicine.com",
   adapter: vercel({ runtime: "edge" }),
   integrations: [tailwind(), preact(), sitemap()],
   vite: {

@@ -5,7 +5,7 @@ export default function SiteJsonLd() {
     "@type": "MedicalOrganization",
     name: "Young Adult Medicine, PLLC",
     url: "https://youngadultmedicine.com",
-    logo: "https://youngadultmedicine.com/logo.png", // replace if different
+    logo: "https://www.youngadultmedicine.com/logo.png", // replace if different
     sameAs: [
       "https://www.instagram.com/askNPCarey", // add other official profiles as needed
     ],
