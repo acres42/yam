@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FAQJsonLd from "@/components/FAQJsonLd";
+import { mentalHealthEvaluationFAQs as faqs } from "../../types/content";
+const canonical =
+  "https://youngadultmedicine.com/services/mental-health-evaluations-nevada-telehealth";
+export const page = {
+  title: "Mental Health Evaluation",
+  description:
+    "Compassionate mental health evaluations for adolescents and young adults via telehealth statewide.",
+};
+---
+
+<BaseLayout
+  title="Mental Health Evaluations by Telehealth in Nevada | Young Adult Medicine"
+  description="Compassionate mental health evaluations for adolescents and young adults via telehealth statewide."
+  canonical={canonical}
+>
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <h1 class="mb-6 text-4xl font-bold">
+      Mental Health Evaluations - Nevada Telehealth
+    </h1>
+    <!-- content -->
+    <section aria-labelledby="faq-heading" class="mt-10 text-left">
+      <h2 id="faq-heading" class="mb-4 text-2xl font-semibold">
+        Frequently asked questions
+      </h2>
+      <dl class="space-y-6">
+        {
+          faqs.map(({ q, a }) => (
+            <div>
+              <dt class="font-medium text-gray-900">{q}</dt>
+              <dd class="mt-1 text-gray-700">{a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+    <FAQJsonLd faqs={[...faqs]} canonical={canonical} />
+  </section>
+</BaseLayout>

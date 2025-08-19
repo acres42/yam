@@ -26,6 +26,12 @@ export default function NavBar() {
                   Home
                 </a>
                 <a
+                  href="/services"
+                  class="font-semibold text-secondary hover:text-primary hover:no-underline"
+                >
+                  Services
+                </a>
+                <a
                   href="/forms"
                   class="font-semibold text-secondary hover:text-primary hover:no-underline"
                 >
@@ -62,6 +68,12 @@ export default function NavBar() {
                 class="font-semibold text-secondary hover:text-primary hover:no-underline"
               >
                 Home
+              </a>
+              <a
+                href="/services"
+                class="font-semibold text-secondary hover:text-primary hover:no-underline"
+              >
+                Services
               </a>
               <a
                 href="/forms"

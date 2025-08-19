@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const modules = import.meta.glob("./*.{astro,md,mdx}", { eager: true });
+
+function slugToTitle(slug: string) {
+  const withSpaces = slug.replace(/-/g, " ");
+  return withSpaces
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .replace(/\bNevada Telehealth\b/i, "(Nevada Telehealth)");
+}
+
+const files = Object.keys(modules)
+  .filter((p) => !/index\.astro$/.test(p))
+  .sort();
+
+type Item = { href: string; title: string; blurb?: string };
+
+const services: Item[] = files.map((p) => {
+  const slug = p.replace("./", "").replace(/\.(astro|mdx?|md)$/, "");
+  const href = `/services/${slug}`;
+  const meta = modules[p]?.page ?? modules[p]?.frontmatter ?? {};
+  const title = meta.title ?? slugToTitle(slug);
+  const blurb = meta.description ?? meta.blurb ?? undefined; // falls back to undefined if not provided
+
+  return { href, title, blurb };
+});
+
+const canonical = "https://youngadultmedicine.com/services";
+---
+
+<BaseLayout
+  title="Services | Young Adult Medicine (Nevada Telehealth)"
+  description="Explore adolescent and young adult telehealth services available statewide in Nevada: reproductive health, trans care, medication management, mental health evaluations, and sports physicals."
+  canonical={canonical}
+>
+  <section class="mx-auto max-w-5xl px-4 py-16">
+    <header class="mb-10">
+      <h1 class="mb-4 text-4xl font-bold text-secondary">Services</h1>
+      <p class="text-lg text-gray-700">
+        Statewide Nevada telehealth for adolescents and young adults. Choose a
+        service to learn what to expect and how to book.
+      </p>
+    </header>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((s) => (
+          <a
+            href={s.href}
+            class="focus:ring-secondary/40 group block rounded-2xl border border-gray-200 p-6 shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2"
+            aria-label={`Learn more about ${s.title}`}
+          >
+            <h3 class="mb-2 text-xl font-semibold">{s.title}</h3>
+            {s.blurb && <p class="text-gray-600">{s.blurb}</p>}
+            <span class="mt-4 inline-block font-medium text-secondary group-hover:underline">
+              Learn more →
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -15,9 +15,9 @@ export const About: FunctionalComponent<AboutProps> = ({
       className={`mx-auto max-w-4xl space-y-6 px-4 py-16 ${className ?? ""}`}
       aria-labelledby="about-heading"
     >
-      <h2 id="about-heading" className="mb-4 text-3xl font-bold text-tertiary">
+      <h1 id="about-heading" className="mb-4 text-3xl font-bold text-tertiary">
         All About YAM
-      </h2>
+      </h1>
 
       <div className="text-left text-base text-gray-700">
         <img
@@ -42,8 +42,8 @@ export const About: FunctionalComponent<AboutProps> = ({
           decoding="async"
         />
         <p>
-          I'm Carey, a board-certified Pediatric Nurse Practitioner with over a
-          decade of experience caring for children and teens in emergency
+          Hello! I'm Carey, a board-certified Pediatric Nurse Practitioner with
+          over a decade of experience caring for children and teens in emergency
           medicine. I created this practice to offer a more personal,
           accessible, and empowering approach to healthcare—right from home.
         </p>

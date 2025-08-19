@@ -1,14 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { About } from "@/components/About";
-
-const pageTitle = "About YAM | Telehealth for Young Adults";
-const pageDescription =
-  "Learn about our telehealth-first practice serving Nevada with evidence-based, inclusive care for young adults.";
+import { About as AboutComponent } from "@/components/About";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} canonical="/about">
+<BaseLayout
+  title="About Young Adult Medicine | Nevada Adolescent Telehealth"
+  description="Compassionate, affirming adolescent and young adult care. Telehealth available statewide in Nevada."
+  canonical="https://youngadultmedicine.com/about"
+>
   <main id="main-content" class="container mx-auto">
-    <About />
+    <AboutComponent />
   </main>
 </BaseLayout>

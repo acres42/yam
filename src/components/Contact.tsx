@@ -15,9 +15,9 @@ export default function Contact({
     <div className="mx-auto mt-2.5 max-w-4xl px-4">
       <div className="mx-auto mb-8 flex w-full max-w-[36rem] flex-col items-center sm:flex-row sm:justify-center sm:gap-8">
         <div className="flex w-full flex-col items-center text-center">
-          <h2 className="mb-2 text-2xl font-bold text-secondary">
-            Get in Touch
-          </h2>
+          <h1 className="mb-2 text-2xl font-bold text-secondary">
+            Contact Young Adult Medicine
+          </h1>
 
           <p className="mb-1">
             Phone:{" "}

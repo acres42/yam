@@ -4,17 +4,55 @@ import ServicesIsland from "@/components/ServicesIsland";
 import hello_there from "../assets/hero/hello_there.jpg";
 import { SITE } from "../config/site";
 
-const { title, scheduling } = SITE;
+const { scheduling } = SITE;
 ---
 
-<BaseLayout title="Welcome to Young Adult Medicine">
+<head>
+  <title>Nevada Adolescent Telehealth | Young Adult Medicine</title>
+  <meta
+    name="description"
+    content="Statewide Nevada telehealth for adolescents and young adults. Compassionate, affirming care for reproductive health, trans care, mental health, and sports physicals."
+  />
+  <link rel="canonical" href="https://youngadultmedicine.com/" />
+  <meta
+    property="og:title"
+    content="Nevada Adolescent Telehealth | Young Adult Medicine"
+  />
+  <meta
+    property="og:description"
+    content="Statewide Nevada telehealth for adolescents and young adults. Compassionate, affirming care for reproductive health, trans care, mental health, and sports physicals."
+  />
+  <meta property="og:url" content="https://youngadultmedicine.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={hello_there.src} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Nevada Adolescent Telehealth | Young Adult Medicine"
+  />
+  <meta
+    name="twitter:description"
+    content="Statewide Nevada telehealth for adolescents and young adults. Compassionate, affirming care for reproductive health, trans care, mental health, and sports physicals."
+  />
+  <meta name="twitter:image" content={hello_there.src} />
+</head>
+
+<BaseLayout title="Nevada Adolescent Telehealth | Young Adult Medicine">
   <section
     id="hero"
     class="bg-cover bg-center px-4 py-20 text-center text-bg"
     style={`background-image: url(${hello_there.src})`}
   >
+    <img
+      src={hello_there.src}
+      alt="Nevada telehealth adolescent medicine visit"
+      class="sr-only"
+      aria-hidden="true"
+    />
     <div class="mx-auto max-w-3xl rounded-md bg-black/50 px-6 py-12">
-      <h2 class="mb-4 text-5xl font-extrabold">{title}</h2>
+      <h1 class="mb-4 text-5xl font-extrabold">
+        Nevada Telehealth for Adolescents and Young Adults
+      </h1>
       <p class="mb-6 text-lg">
         Compassionate, affirming care for patients from birth–21.<br />
         Telehealth visits available in all of Nevada.
