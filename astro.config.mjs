@@ -5,10 +5,9 @@ import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-const baseUrl = import.meta.env.PUBLIC_SITE_BASE_URL;
 export default defineConfig({
   output: "server",
-  site: `https://${baseUrl}`,
+  site: "https://youngadultmedicine.com",
   adapter: vercel({ runtime: "edge" }),
   integrations: [tailwind(), preact(), sitemap()],
   vite: {
