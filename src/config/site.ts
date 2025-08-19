@@ -1,5 +1,7 @@
 export const SITE = {
   title: import.meta.env.PUBLIC_SITE_TITLE || "Young Adult Medicine",
+  description:
+    import.meta.env.PUBLIC_SITE_DESCRIPTION || "Your health is our priority.",
   instagramUrl: import.meta.env.PUBLIC_INSTAGRAM_URL || "https://instagram.com",
   tiktokUrl: import.meta.env.PUBLIC_TIKTOK_URL || "https://tiktok.com",
   youtubeUrl: import.meta.env.PUBLIC_YOUTUBE_URL || "https://youtube.com",
@@ -9,4 +11,5 @@ export const SITE = {
   scheduling:
     import.meta.env.PUBLIC_SCHEDULING_LINK ||
     "https://www.tebra.com/care/provider/carey-roselee-rn-msn-cpnp-bc-1093181406",
+  url: import.meta.env.PUBLIC_SITE_URL || "https://example.com",
 };
