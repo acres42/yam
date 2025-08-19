@@ -2,6 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import FAQJsonLd from "@/components/FAQJsonLd";
 import { medicationManagementFAQs as faqs } from "../../types/content";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+
 const canonical =
   "https://youngadultmedicine.com/services/trans-care-nevada-telehealth";
 export const page = {
@@ -15,6 +17,13 @@ export const page = {
   description="Safe, evidence-based medication management for teens and young adults via telehealth across Nevada."
   canonical={canonical}
 >
+  <BreadcrumbJsonLd
+    items={[
+      { name: "Home", url: "https://youngadultmedicine.com/" },
+      { name: "Services", url: "https://youngadultmedicine.com/services" },
+      { name: "Medication Management", url: canonical },
+    ]}
+  />
   <section class="mx-auto max-w-3xl px-4 py-16">
     <h1 class="mb-6 text-4xl font-bold">
       Medication Management - Nevada Telehealth

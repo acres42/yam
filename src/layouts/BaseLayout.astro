@@ -3,6 +3,7 @@ import "../styles/global.css";
 import NavBar from "../components/NavBar";
 import SocialIcons from "../components/SocialIcons";
 import TebraWidget from "../components/TebraWidget.astro";
+import SiteJsonLd from "@/components/SiteJsonLd";
 import { SITE } from "../config/site";
 
 const { title = SITE.title } = Astro.props;
@@ -19,6 +20,7 @@ const { title = SITE.title } = Astro.props;
     <main>
       <NavBar client:load />
       <slot />
+      <SiteJsonLd />
       <TebraWidget />
       <SocialIcons />
     </main>

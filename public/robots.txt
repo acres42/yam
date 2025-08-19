@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://youngadultmedicine.com/sitemap-index.xml
