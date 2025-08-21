@@ -26,6 +26,6 @@ export const SITE: SiteConfig = {
   scheduling:
     import.meta.env.PUBLIC_SCHEDULING_LINK ||
     "https://www.tebra.com/care/provider/carey-roselee-rn-msn-cpnp-bc-1093181406",
-  url: import.meta.env.PUBLIC_SITE_URL || "https://www.youngadultmedicine.com",
+  url: import.meta.env.PUBLIC_SITE_URL || "https://www.youngadultmedicine.com/",
   logo: yamLogo,
 };
