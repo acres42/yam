@@ -31,6 +31,13 @@ a {
 }
 
 @layer utilities {
+  .stack-12 > * + * {
+    margin-top: 1.5rem;
+  }
+  .stack-16 > * + * {
+    margin-top: 2rem;
+  }
+
   .debug-breakpoints::after {
     content: "xs";
   }

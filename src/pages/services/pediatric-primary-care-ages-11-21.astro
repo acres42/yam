@@ -1,0 +1,151 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FAQJsonLd from "@/components/FAQJsonLd";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { SITE } from "../../config/site";
+
+const { scheduling } = SITE;
+
+const canonical =
+  "https://www.youngadultmedicine.com/services/pediatric-primary-care-ages-11-21";
+
+const faqs = [
+  {
+    q: "Do you provide primary care for teens and young adults?",
+    a: "Yes. We specialize in ages 11–21, offering both preventive and problem-focused visits tailored to adolescents and young adults.",
+  },
+  {
+    q: "Can you be my teen’s main doctor?",
+    a: "Yes. We can serve as a primary care provider, or collaborate with an existing pediatrician or family physician if you prefer.",
+  },
+  {
+    q: "What kinds of visits are offered?",
+    a: "Wellness checks, school and sports physicals, reproductive health care, mental health evaluations, medication management, and follow-up visits.",
+  },
+];
+---
+
+<BaseLayout
+  title="Pediatric Primary Care — Ages 11–21 | Young Adult Medicine"
+  description="Comprehensive primary care for adolescents and young adults ages 11–21. Preventive visits, reproductive health, mental health evaluations, medication management, and more."
+  canonical={canonical}
+>
+  <BreadcrumbJsonLd
+    items={[
+      { name: "Home", url: "https://www.youngadultmedicine.com/" },
+      { name: "Services", url: "https://www.youngadultmedicine.com/services" },
+      { name: "Pediatric Primary Care — Ages 11–21", url: canonical },
+    ]}
+  />
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <div class="stack-16">
+      <!-- Hero -->
+      <header>
+        <h1 class="text-4xl font-bold text-secondary">
+          Pediatric Primary Care — Ages 11–21
+        </h1>
+        <p class="mt-6 text-lg text-gray-700">
+          Dedicated care for adolescents and young adults across Nevada.
+          Preventive visits, same-day sick visits, and ongoing support tailored
+          to this age group.
+        </p>
+      </header>
+
+      <!-- Services included -->
+      <section>
+        <h2 class="mb-4 text-2xl font-semibold">Primary care services</h2>
+        <ul class="list-disc space-y-1 pl-6 text-gray-800">
+          <li>Annual wellness exams and preventive care</li>
+          <li>School, camp, and sports physicals</li>
+          <li>Immunizations and vaccine counseling</li>
+          <li>Reproductive & sexual health care</li>
+          <li>Mental health evaluations and referrals</li>
+          <li>Medication management</li>
+          <li>Chronic condition follow-up</li>
+        </ul>
+      </section>
+
+      <!-- How it works -->
+      <section>
+        <h2 class="mb-4 text-2xl font-semibold">How it works</h2>
+        <ol class="list-decimal space-y-2 pl-6 text-gray-800">
+          <li>
+            Schedule an appointment online via our
+            <a class="underline" href={scheduling}>scheduling portal</a>.
+          </li>
+          <li>Complete secure intake forms provided after booking.</li>
+          <li>
+            Attend your visit either via telehealth or in person if required.
+          </li>
+        </ol>
+      </section>
+
+      <!-- CTA -->
+      <div>
+        <a
+          href={scheduling}
+          class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
+          aria-label="Schedule a pediatric primary care appointment for ages 11–21"
+        >
+          Schedule an appointment
+        </a>
+      </div>
+
+      <!-- Related services -->
+      <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
+        <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
+        <ul class="list-disc space-y-2 pl-6 text-gray-800">
+          <li>
+            <a class="underline" href="/services/adolescent-medicine-nevada">
+              Adolescent Medicine — Nevada
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
+              href="/services/medication-management-nevada-telehealth"
+            >
+              Medication Management — Telehealth
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
+              href="/services/teen-young-adult-healthcare-las-vegas"
+            >
+              Teen & Young Adult Healthcare — Las Vegas
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- FAQ -->
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
+          Frequently asked questions
+        </h2>
+        <dl class="space-y-6">
+          {
+            faqs.map(({ q, a }) => (
+              <div>
+                <dt class="font-medium text-gray-900">{q}</dt>
+                <dd class="mt-1 text-gray-700">{a}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </section>
+
+      <!-- Back link with divider -->
+      <div class="border-t border-gray-200 pt-6">
+        <p class="text-sm">
+          <a class="underline" href="/services">← Back to all services</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- JSON-LD -->
+    <FAQJsonLd faqs={faqs} canonical={canonical} />
+  </section>
+</BaseLayout>

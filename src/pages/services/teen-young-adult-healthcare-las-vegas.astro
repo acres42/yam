@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FAQJsonLd from "@/components/FAQJsonLd";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { SITE } from "../../config/site";
+
+const { scheduling } = SITE;
+
+const canonical =
+  "https://www.youngadultmedicine.com/services/teen-young-adult-healthcare-las-vegas";
+
+const faqs = [
+  {
+    q: "Do you see teens and young adults in Las Vegas via telehealth?",
+    a: "Yes. We provide care for Las Vegas and all of Nevada via secure video visits.",
+  },
+  {
+    q: "What ages do you care for?",
+    a: "Typically ages 11–21. If you’re unsure, reach out and we’ll help determine the best fit.",
+  },
+  {
+    q: "Can I book online?",
+    a: "Yes—use our online scheduling portal. Secure intake forms arrive after booking.",
+  },
+];
+---
+
+<BaseLayout
+  title="Teen & Young Adult Healthcare — Las Vegas | Young Adult Medicine"
+  description="Compassionate, affirming healthcare for teens and young adults in Las Vegas. Telehealth for reproductive health, mental health evaluations, medication management, and more."
+  canonical={canonical}
+>
+  <BreadcrumbJsonLd
+    items={[
+      { name: "Home", url: "https://www.youngadultmedicine.com/" },
+      { name: "Services", url: "https://www.youngadultmedicine.com/services" },
+      { name: "Teen & Young Adult Healthcare — Las Vegas", url: canonical },
+    ]}
+  />
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <div class="stack-16">
+      <!-- Hero -->
+      <header>
+        <h1 class="text-4xl font-bold text-secondary">
+          Teen & Young Adult Healthcare — Las Vegas
+        </h1>
+        <p class="mt-6 text-lg text-gray-700">
+          Inclusive, evidence‑based care for adolescents and young adults in Las
+          Vegas—delivered by telehealth for convenience and privacy.
+        </p>
+      </header>
+
+      <!-- How visits work -->
+      <section>
+        <h2 class="mb-4 text-2xl font-semibold">How visits work</h2>
+        <ol class="list-decimal space-y-2 pl-6 text-gray-800">
+          <li>
+            Book online via our
+            <a class="underline" href={scheduling}>scheduling portal</a>.
+          </li>
+          <li>Complete secure intake forms after booking.</li>
+          <li>Join your video visit from a private, well‑lit location.</li>
+        </ol>
+      </section>
+
+      <!-- CTA -->
+      <div>
+        <a
+          href={scheduling}
+          class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
+          aria-label="Schedule a teen and young adult healthcare appointment in Las Vegas"
+        >
+          Schedule an appointment
+        </a>
+      </div>
+
+      <!-- Related services -->
+      <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
+        <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
+        <ul class="list-disc space-y-2 pl-6 text-gray-800">
+          <li>
+            <a
+              class="underline"
+              href="/services/pediatric-nurse-practitioner-las-vegas"
+              >Pediatric Nurse Practitioner — Las Vegas</a
+            >
+          </li>
+          <li>
+            <a class="underline" href="/services/pediatric-telehealth-nevada"
+              >Pediatric Telehealth — Nevada</a
+            >
+          </li>
+          <li>
+            <a class="underline" href="/services/adolescent-medicine-nevada"
+              >Adolescent Medicine — Nevada</a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- FAQ -->
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
+          Frequently asked questions
+        </h2>
+        <dl class="space-y-6">
+          {
+            faqs.map(({ q, a }) => (
+              <div>
+                <dt class="font-medium text-gray-900">{q}</dt>
+                <dd class="mt-1 text-gray-700">{a}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </section>
+
+      <!-- Back link with divider -->
+      <div class="border-t border-gray-200 pt-6">
+        <p class="text-sm">
+          <a class="underline" href="/services">← Back to all services</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- JSON-LD -->
+    <FAQJsonLd faqs={faqs} canonical={canonical} />
+  </section>
+</BaseLayout>

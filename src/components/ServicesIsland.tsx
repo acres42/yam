@@ -10,8 +10,8 @@ export default function ServicesIsland() {
   useEffect(() => {
     AOS.init({
       once: true,
-      duration: 600,
-      easing: "ease-out",
+      duration: 400,
+      easing: "ease-in",
     });
   }, []);
 

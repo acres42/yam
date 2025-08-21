@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FAQJsonLd from "@/components/FAQJsonLd";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import { SITE } from "../../config/site";
+
+const { scheduling } = SITE;
+
+const canonical =
+  "https://www.youngadultmedicine.com/services/adolescent-medicine-nevada";
+
+const faqs = [
+  {
+    q: "What ages do you see for adolescent medicine?",
+    a: "We typically care for patients ages 11–21. If you’re unsure, contact us and we’ll help determine the best fit.",
+  },
+  {
+    q: "Is this visit available statewide by telehealth?",
+    a: "Yes. We offer adolescent medicine visits across all of Nevada via secure video, when clinically appropriate.",
+  },
+  {
+    q: "Can parents join the visit?",
+    a: "Yes. With the patient’s permission and as appropriate for the topic, parents or guardians can participate for part of the visit.",
+  },
+];
+---
+
+<BaseLayout
+  title="Adolescent Medicine — Nevada | Young Adult Medicine"
+  description="Specialized adolescent medicine for ages 11–21 across Nevada. Telehealth care for reproductive health, mental health evaluations, medication management, and more."
+  canonical={canonical}
+>
+  <BreadcrumbJsonLd
+    items={[
+      { name: "Home", url: "https://www.youngadultmedicine.com/" },
+      { name: "Services", url: "https://www.youngadultmedicine.com/services" },
+      { name: "Adolescent Medicine — Nevada", url: canonical },
+    ]}
+  />
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <div class="stack-16">
+      <!-- Hero -->
+      <header>
+        <h1 class="text-4xl font-bold text-secondary">
+          Adolescent Medicine — Nevada
+        </h1>
+        <p class="mt-6 text-lg text-gray-700">
+          Compassionate, evidence‑based care tailored to teens and young adults
+          (ages 11–21). We address physical, mental, and reproductive health
+          with privacy, inclusivity, and practical guidance for families.
+        </p>
+      </header>
+
+      <!-- How visits work -->
+      <section>
+        <h2 class="mb-4 text-2xl font-semibold">How visits work</h2>
+        <ol class="list-decimal space-y-2 pl-6 text-gray-800">
+          <li>
+            Book online via our
+            <a class="underline" href={scheduling}>scheduling portal</a>.
+          </li>
+          <li>Complete secure intake forms after booking.</li>
+          <li>
+            Join your video visit from a private, well‑lit location in Nevada.
+          </li>
+        </ol>
+      </section>
+
+      <!-- CTA -->
+      <div>
+        <a
+          href={scheduling}
+          class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
+          aria-label="Schedule an adolescent medicine appointment in Nevada"
+        >
+          Schedule an appointment
+        </a>
+      </div>
+
+      <!-- Related services -->
+      <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
+        <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
+        <ul class="list-disc space-y-2 pl-6 text-gray-800">
+          <li>
+            <a class="underline" href="/services/telehealth-medicine">
+              Telehealth Medicine — Nevada
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
+              href="/services/mental-health-evaluations-nevada-telehealth"
+            >
+              Mental Health Evaluations — Telehealth
+            </a>
+          </li>
+          <li>
+            <a
+              class="underline"
+              href="/services/pediatric-primary-care-ages-11-21"
+            >
+              Pediatric Primary Care — Ages 11–21
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- FAQ -->
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
+          Frequently asked questions
+        </h2>
+        <dl class="space-y-6">
+          {
+            faqs.map(({ q, a }) => (
+              <div>
+                <dt class="font-medium text-gray-900">{q}</dt>
+                <dd class="mt-1 text-gray-700">{a}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </section>
+
+      <!-- Back link with divider -->
+      <div class="border-t border-gray-200 pt-6">
+        <p class="text-sm">
+          <a class="underline" href="/services">← Back to all services</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- JSON-LD -->
+    <FAQJsonLd faqs={faqs} canonical={canonical} />
+  </section>
+</BaseLayout>
