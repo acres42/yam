@@ -26,25 +26,25 @@ export default function NavBar() {
                   Home
                 </a>
                 <a
-                  href="/services"
+                  href="/services/"
                   class="font-semibold text-secondary hover:text-primary hover:no-underline"
                 >
                   Services
                 </a>
                 <a
-                  href="/forms"
+                  href="/forms/"
                   class="font-semibold text-secondary hover:text-primary hover:no-underline"
                 >
                   Forms
                 </a>
                 <a
-                  href="/contact"
+                  href="/contact/"
                   class="font-semibold text-secondary hover:text-primary hover:no-underline"
                 >
                   Contact
                 </a>
                 <a
-                  href="/about"
+                  href="/about/"
                   class="font-semibold text-secondary hover:text-primary hover:no-underline"
                 >
                   About
@@ -70,25 +70,25 @@ export default function NavBar() {
                 Home
               </a>
               <a
-                href="/services"
+                href="/services/"
                 class="font-semibold text-secondary hover:text-primary hover:no-underline"
               >
                 Services
               </a>
               <a
-                href="/forms"
+                href="/forms/"
                 class="font-semibold text-secondary hover:text-primary hover:no-underline"
               >
                 Forms
               </a>
               <a
-                href="/contact"
+                href="/contact/"
                 class="font-semibold text-secondary hover:text-primary hover:no-underline"
               >
                 Contact
               </a>
               <a
-                href="/about"
+                href="/about/"
                 class="font-semibold text-secondary hover:text-primary hover:no-underline"
               >
                 About

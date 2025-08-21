@@ -7,7 +7,7 @@ import { SITE } from "../../config/site";
 const { scheduling } = SITE;
 
 const canonical =
-  "https://www.youngadultmedicine.com/services/adolescent-medicine-nevada";
+  "https://www.youngadultmedicine.com/services/adolescent-medicine-nevada/";
 
 const faqs = [
   {
@@ -33,7 +33,7 @@ const faqs = [
   <BreadcrumbJsonLd
     items={[
       { name: "Home", url: "https://www.youngadultmedicine.com/" },
-      { name: "Services", url: "https://www.youngadultmedicine.com/services" },
+      { name: "Services", url: "https://www.youngadultmedicine.com/services/" },
       { name: "Adolescent Medicine — Nevada", url: canonical },
     ]}
   />
@@ -83,14 +83,14 @@ const faqs = [
         <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
         <ul class="list-disc space-y-2 pl-6 text-gray-800">
           <li>
-            <a class="underline" href="/services/telehealth-medicine">
+            <a class="underline" href="/services/telehealth-medicine/">
               Telehealth Medicine — Nevada
             </a>
           </li>
           <li>
             <a
               class="underline"
-              href="/services/mental-health-evaluations-nevada-telehealth"
+              href="/services/mental-health-evaluations-nevada-telehealth/"
             >
               Mental Health Evaluations — Telehealth
             </a>
@@ -98,7 +98,7 @@ const faqs = [
           <li>
             <a
               class="underline"
-              href="/services/pediatric-primary-care-ages-11-21"
+              href="/services/pediatric-primary-care-ages-11-21/"
             >
               Pediatric Primary Care — Ages 11–21
             </a>
@@ -126,7 +126,7 @@ const faqs = [
       <!-- Back link with divider -->
       <div class="border-t border-gray-200 pt-6">
         <p class="text-sm">
-          <a class="underline" href="/services">← Back to all services</a>
+          <a class="underline" href="/services/">← Back to all services</a>
         </p>
       </div>
     </div>
