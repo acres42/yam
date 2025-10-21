@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ServicesIsland from "@/components/ServicesIsland";
 import hello_there from "../assets/hero/hello_there.jpg";
+import { CommercialInsurance } from "@/components/CommercialInsurance";
 import { SITE } from "../config/site";
 
 const { scheduling } = SITE;
@@ -64,5 +65,6 @@ const { scheduling } = SITE;
       </a>
     </div>
   </section>
+  <CommercialInsurance />
   <ServicesIsland client:load />
 </BaseLayout>
