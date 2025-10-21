@@ -6,6 +6,7 @@ import ContactForm from "../components/ContactForm";
 const schedulingLink = import.meta.env.PUBLIC_SCHEDULING_LINK;
 const telephone = import.meta.env.PUBLIC_CONTACT_TELEPHONE;
 const fax = import.meta.env.PUBLIC_CONTACT_FAX;
+const address = import.meta.env.PUBLIC_ADDRESS;
 const contactParam = new URL(Astro.request.url).searchParams.get("contact");
 const message =
   contactParam === "success"
@@ -29,6 +30,7 @@ const message =
   canonical="https://www.youngadultmedicine.com/contact/"
 >
   <ContactSection
+    address={address}
     fax={fax}
     schedulingLink={schedulingLink}
     telephone={telephone}

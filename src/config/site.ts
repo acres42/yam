@@ -2,6 +2,7 @@ import yamLogo from "../assets/logos/optimized_yam.svg";
 export interface SiteConfig {
   title: string;
   description: string;
+  address: string;
   phone: string;
   fax?: string;
   email: string;
@@ -17,6 +18,9 @@ export const SITE: SiteConfig = {
   title: import.meta.env.PUBLIC_SITE_TITLE || "Young Adult Medicine",
   description:
     import.meta.env.PUBLIC_SITE_DESCRIPTION || "Your health is our priority.",
+  address:
+    import.meta.env.PUBLIC_CONTACT_ADDRESS ||
+    "9330 West Sarhara Ave, Suite 230, Las Vegas, NV 89117",
   instagramUrl: import.meta.env.PUBLIC_INSTAGRAM_URL || "https://instagram.com",
   tiktokUrl: import.meta.env.PUBLIC_TIKTOK_URL || "https://tiktok.com",
   youtubeUrl: import.meta.env.PUBLIC_YOUTUBE_URL || "https://youtube.com",

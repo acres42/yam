@@ -1,12 +1,14 @@
 import family75 from "../assets/marketing/family75.jpg";
 
 interface ContactProps {
+  address: string;
   telephone: string;
   fax: string;
   schedulingLink: string;
 }
 
 export default function Contact({
+  address,
   telephone,
   fax,
   schedulingLink,
@@ -18,7 +20,7 @@ export default function Contact({
           <h1 className="mb-2 text-2xl font-bold text-secondary">
             Contact Young Adult Medicine
           </h1>
-
+          <p className="px-4 mb-4">{address}</p>
           <p className="mb-1">
             Phone:{" "}
             <a
