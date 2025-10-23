@@ -27,10 +27,9 @@ const NonOfferedService = {
   ComplexEndicronology:
     "Complex endocrinology concerns like thyroid and juvenile arthritis",
   AcuteAbdominial: "Acute onset abdominal pain in both lower and upper stomach",
-  Fevers: "Any fever in children under 2 months",
   Breathing:
-    "Any breathing disorders like asthma, croup, RSV as the correct procedure to diagnose is in-person",
-  Genitourinary: "No genitourinary physickal exams or pregnancy care",
+    "Any breathing disorders like asthma, croup, RSV that would require in-office administration of medications as the correct procedure is to give in-office",
+  Genitourinary: "No genitourinary physical exams or pregnancy care",
   Bones: "Complex bone disorders such as scoliosis",
   Additional:
     "**I do not have in-office urine tests or Strep tests**|**No medications dispensed on site.**|**ALL outpatient lab testing available!!**",
