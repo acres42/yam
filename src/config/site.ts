@@ -20,10 +20,15 @@ export const SITE: SiteConfig = {
     import.meta.env.PUBLIC_SITE_DESCRIPTION || "Your health is our priority.",
   address:
     import.meta.env.PUBLIC_CONTACT_ADDRESS ||
-    "9330 West Sarhara Ave, Suite 230, Las Vegas, NV 89117",
-  instagramUrl: import.meta.env.PUBLIC_INSTAGRAM_URL || "https://instagram.com",
-  tiktokUrl: import.meta.env.PUBLIC_TIKTOK_URL || "https://tiktok.com",
-  youtubeUrl: import.meta.env.PUBLIC_YOUTUBE_URL || "https://youtube.com",
+    "9330 West Sahara Ave, Suite 230, Las Vegas, NV 89117",
+  instagramUrl:
+    import.meta.env.PUBLIC_INSTAGRAM_URL ||
+    "https://www.instagram.com/asknpcarey?utm_source=qr&igsh=eXA5bG1hY3Y3d2o3",
+  tiktokUrl:
+    import.meta.env.PUBLIC_TIKTOK_URL ||
+    "https://www.tiktok.com/@young.adult.medicine?_t=ZP-8xdJNkvvItz&_r=1",
+  youtubeUrl:
+    import.meta.env.PUBLIC_YOUTUBE_URL || "https://www.youtube.com/@AskNPCarey",
   email: import.meta.env.PUBLIC_CONTACT_EMAIL || "hello@example.com",
   phone: import.meta.env.PUBLIC_CONTACT_TELEPHONE || "(555) 555-5555",
   fax: import.meta.env.PUBLIC_CONTACT_FAX || "(555) 555-1212",

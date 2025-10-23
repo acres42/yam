@@ -15,7 +15,6 @@ const TelehealthService = {
   Vomiting: "Vomiting, Diarrhea, Constipation",
   SpecialistReferral: "Referral to Specialists when appropriate",
   Rashes: "Skin rashes, dry skin, itching, eczema and acne",
-  Vaccines: "Vaccines available via mobile service",
   EmergencyFollowup: "Follow up after Emergency Department visit",
 } as const;
 
@@ -28,12 +27,15 @@ const NonOfferedService = {
   Diabetes: "Any Diabetes",
   ComplexEndicronology:
     "Complex endocrinology concerns like thyroid and juvenile arthritis",
-  UTI: "UTIs in children under 5",
+  AcuteAbdominial: "Acute onset abdominal pain in both lower and upper stomach",
   Fevers: "Any fever in children under 2 months",
   Breathing:
     "Any breathing disorders like asthma, croup, RSV as the correct procedure to diagnose is in-person",
+  Genitourinary: "No genitourinary physickal exams or pregnancy care",
   Bones: "Complex bone disorders such as scoliosis",
-  AcuteAbdominial: "Acute onset abdominal pain in both lower and upper stomach",
+  Additional: `**I do not have in-office urine tests or Strep tests.
+  **No medications dispensed on site
+  **ALL outpatient lab testing available!!**`,
 } as const;
 
 export const nonServicesList: string[] = Object.values(NonOfferedService);
