@@ -7,11 +7,10 @@ const TelehealthService = {
   SchoolStress: "School Stress and Peer challenges",
   Transitions:
     "Transition from Middle School to High School OR High School to College",
-  ReproHealth: "Reproductive Health counseling including Medication",
-  Physicals: "Camp and Sports Physicals when telehealth appropriate",
+  ReproHealth: "Reproductive Health counseling including medication",
+  Physicals: "Camp and Sports Physicals (middle and high school)",
   Growth: "Growth and Weight Optimization including medication",
   Fevers: "Fevers, allergies, sore throat, and pinkeye",
-  WellChecks: "Well Child Checks age 11+",
   Vomiting: "Vomiting, Diarrhea, Constipation",
   SpecialistReferral: "Referral to Specialists when appropriate",
   Rashes: "Skin rashes, dry skin, itching, eczema and acne",
