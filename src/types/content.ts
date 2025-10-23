@@ -32,9 +32,8 @@ const NonOfferedService = {
     "Any breathing disorders like asthma, croup, RSV as the correct procedure to diagnose is in-person",
   Genitourinary: "No genitourinary physickal exams or pregnancy care",
   Bones: "Complex bone disorders such as scoliosis",
-  Additional: `**I do not have in-office urine tests or Strep tests.
-  **No medications dispensed on site
-  **ALL outpatient lab testing available!!**`,
+  Additional:
+    "**I do not have in-office urine tests or Strep tests**|**No medications dispensed on site.**|**ALL outpatient lab testing available!!**",
 } as const;
 
 export const nonServicesList: string[] = Object.values(NonOfferedService);

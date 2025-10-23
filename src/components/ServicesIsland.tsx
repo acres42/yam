@@ -40,7 +40,11 @@ export default function ServicesIsland() {
               data-aos-delay={index * 100}
             >
               <StethoscopeIcon class="mt-1 h-5 min-h-5 w-5 min-w-5 shrink-0 text-accent" />
-              <span>{service}</span>
+              <span>
+                {service.split("|").map((line, i) => (
+                  <p key={i} dangerouslySetInnerHTML={{ __html: line }} />
+                ))}
+              </span>
             </li>
           ))}
         </ul>
@@ -53,7 +57,11 @@ export default function ServicesIsland() {
               data-aos-delay={(index + firstColumn.length) * 100}
             >
               <StethoscopeIcon class="mt-1 h-5 min-h-5 w-5 min-w-5 shrink-0 text-accent" />
-              <span>{service}</span>
+              <span>
+                {service.split("|").map((line, i) => (
+                  <p key={i} dangerouslySetInnerHTML={{ __html: line }} />
+                ))}
+              </span>
             </li>
           ))}
         </ul>
@@ -72,7 +80,11 @@ export default function ServicesIsland() {
               data-aos-delay={index * 100}
             >
               <NoIcon class="mt-1 h-5 min-h-5 w-5 min-w-5 shrink-0 text-red-600" />
-              <span>{nonservice}</span>
+              <span>
+                {nonservice.split("|").map((line, i) => (
+                  <p key={i} dangerouslySetInnerHTML={{ __html: line }} />
+                ))}
+              </span>
             </li>
           ))}
         </ul>
@@ -85,7 +97,11 @@ export default function ServicesIsland() {
               data-aos-delay={(index + notFirstColumn.length) * 100}
             >
               <NoIcon class="mt-1 h-5 min-h-5 w-5 min-w-5 shrink-0 text-red-600" />
-              <span>{nonservice}</span>
+              <span>
+                {nonservice.split("|").map((line, i) => (
+                  <p key={i} dangerouslySetInnerHTML={{ __html: line }} />
+                ))}
+              </span>
             </li>
           ))}
         </ul>
