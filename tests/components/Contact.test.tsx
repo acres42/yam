@@ -12,7 +12,7 @@ describe("<Contact />", () => {
   it("renders the heading", () => {
     render(<Contact {...props} />);
     expect(
-      screen.getByRole("heading", { name: /get in touch/i }),
+      screen.getByRole("heading", { name: /contact/i }),
     ).toBeInTheDocument();
   });
 

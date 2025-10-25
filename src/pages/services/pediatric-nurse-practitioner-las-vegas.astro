@@ -11,12 +11,12 @@ const canonical =
 
 const faqs = [
   {
-    q: "Do you see patients in Las Vegas via telehealth?",
+    q: "Do you see patients in Las Vegas or statewide Nevada via telehealth?",
     a: "Yes. We provide adolescent and young adult care for Las Vegas and all of Nevada via secure telehealth.",
   },
   {
     q: "What ages do you treat?",
-    a: "We typically see patients ages 11–21. If you’re unsure, contact us and we’ll help you determine the best fit.",
+    a: "We typically see patients ages 5–21+. If you’re unsure, contact us and we’ll help you determine the best fit.",
   },
   {
     q: "Can I book online?",
@@ -26,8 +26,8 @@ const faqs = [
 ---
 
 <BaseLayout
-  title="Pediatric Nurse Practitioner in Las Vegas | Young Adult Medicine"
-  description="LGBTQ+‑affirming pediatric nurse practitioner for teens and young adults in Las Vegas. Telehealth for reproductive health, mental health evaluations, medication management, and more."
+  title="Pediatric Nurse Practitioner | Young Adult Medicine"
+  description="LGBTQ+‑affirming pediatric nurse practitioner for teens and young adults in Las Vegas or statewide in Nevada via telehealth. Reproductive health, mental health evaluations, medication management, and more."
   canonical={canonical}
 >
   <BreadcrumbJsonLd
@@ -38,90 +38,91 @@ const faqs = [
     ]}
   />
 
-  <section class="mx-auto max-w-3xl px-4 py-16">
-    <div class="stack-16">
-      <!-- Hero -->
-      <header>
-        <h1 class="text-4xl font-bold text-secondary">
-          Pediatric Nurse Practitioner — Las Vegas
-        </h1>
-        <p class="mt-6 text-lg text-gray-700">
-          Compassionate, evidence‑based care for adolescents and young adults in
-          Las Vegas—delivered by telehealth for convenience and privacy.
-        </p>
-      </header>
+  <section class="mx-auto max-w-3xl space-y-12 px-4 py-20">
+    <!-- Hero -->
+    <header>
+      <h1 class="text-4xl font-bold text-secondary">
+        Pediatric Nurse Practitioner — Las Vegas
+      </h1>
+      <p class="mt-6 text-lg text-gray-700">
+        Compassionate, evidence-based pediatric and adolescent care in Las Vegas
+        and throughout Nevada. In-person and telehealth visits for ages 5–21.
+      </p>
+    </header>
 
-      <!-- How it works -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">How visits work</h2>
-        <ol class="list-decimal space-y-2 pl-6 text-gray-800">
-          <li>
-            Book online via our
-            <a class="underline" href={scheduling}>scheduling portal</a>.
-          </li>
-          <li>Complete secure intake forms we send after booking.</li>
-          <li>Join your video visit from a private, well‑lit location.</li>
-        </ol>
-      </section>
+    <!-- How Visits Work -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">How Visits Work</h2>
+      <ol class="list-decimal space-y-2 pl-6 text-gray-800">
+        <li>
+          Book online via our
+          <a class="underline" href={scheduling}>scheduling portal</a>.
+        </li>
+        <li>Complete secure intake forms we send after booking.</li>
+        <li>
+          We'll see you in our Las Vegas location or join your video visit from
+          a private, well-lit location in Nevada.
+        </li>
+      </ol>
+    </section>
 
-      <!-- CTA -->
-      <div>
-        <a
-          href={scheduling}
-          class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
-          aria-label="Schedule an appointment with a pediatric nurse practitioner in Las Vegas"
-        >
-          Schedule an appointment
-        </a>
-      </div>
+    <!-- CTA -->
+    <div class="mb-12 mt-12">
+      <a
+        href={scheduling}
+        class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
+        aria-label="Schedule an appointment with a pediatric nurse practitioner in Las Vegas"
+      >
+        Schedule an appointment
+      </a>
+    </div>
 
-      <!-- Related services -->
-      <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
-        <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
-        <ul class="list-disc space-y-2 pl-6 text-gray-800">
-          <li>
-            <a
-              class="underline"
-              href="/services/teen-young-adult-healthcare-las-vegas/"
-              >Teen & Young Adult Healthcare — Las Vegas</a
-            >
-          </li>
-          <li>
-            <a class="underline" href="/services/pediatric-telehealth-nevada/"
-              >Pediatric Telehealth — Nevada</a
-            >
-          </li>
-          <li>
-            <a class="underline" href="/services/adolescent-medicine-nevada/"
-              >Adolescent Medicine — Nevada</a
-            >
-          </li>
-        </ul>
-      </aside>
+    <!-- Related services -->
+    <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
+      <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
+      <ul class="list-disc space-y-2 pl-6 text-gray-800">
+        <li>
+          <a
+            class="underline"
+            href="/services/teen-young-adult-healthcare-las-vegas/"
+            >Teen & Young Adult Healthcare — Las Vegas</a
+          >
+        </li>
+        <li>
+          <a class="underline" href="/services/pediatric-telehealth-nevada/"
+            >Pediatric Telehealth — Nevada</a
+          >
+        </li>
+        <li>
+          <a class="underline" href="/services/adolescent-medicine-nevada/"
+            >Adolescent Medicine — Nevada</a
+          >
+        </li>
+      </ul>
+    </aside>
 
-      <!-- FAQ -->
-      <section aria-labelledby="faq-heading">
-        <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
-          Frequently asked questions
-        </h2>
-        <dl class="space-y-6">
-          {
-            faqs.map(({ q, a }) => (
-              <div>
-                <dt class="font-medium text-gray-900">{q}</dt>
-                <dd class="mt-1 text-gray-700">{a}</dd>
-              </div>
-            ))
-          }
-        </dl>
-      </section>
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading" class="mb-12 mt-12">
+      <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
+        Frequently Asked Questions
+      </h2>
+      <dl class="space-y-6">
+        {
+          faqs.map(({ q, a }) => (
+            <div>
+              <dt class="font-medium text-gray-900">{q}</dt>
+              <dd class="mt-1 text-gray-700">{a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
 
-      <!-- Back link with divider -->
-      <div class="border-t border-gray-200 pt-6">
-        <p class="text-sm">
-          <a class="underline" href="/services/">← Back to all services</a>
-        </p>
-      </div>
+    <!-- Back link with divider -->
+    <div class="border-t border-gray-200 pt-6">
+      <p class="text-sm">
+        <a class="underline" href="/services/">← Back to all services</a>
+      </p>
     </div>
 
     <!-- JSON-LD -->

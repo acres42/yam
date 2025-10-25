@@ -11,7 +11,7 @@ const canonical =
 
 const faqs = [
   {
-    q: "Do you provide LGBTQ+‑affirming care in Las Vegas via telehealth?",
+    q: "Do you provide LGBTQ+‑affirming care in Las Vegas and statewide in Nevada via telehealth?",
     a: "Yes. We offer inclusive, gender‑affirming care for teens and young adults in Las Vegas and across Nevada via secure video visits.",
   },
   {
@@ -27,7 +27,7 @@ const faqs = [
 
 <BaseLayout
   title="LGBTQ+ Friendly Pediatric Provider — Las Vegas | Young Adult Medicine"
-  description="Inclusive, gender‑affirming pediatric care for teens and young adults in Las Vegas. Telehealth for reproductive health, mental health evaluations, medication management, and more."
+  description="Inclusive, gender‑affirming pediatric care for teens and young adults in Las Vegas and statewide in Nevada via telehealth for reproductive health, mental health evaluations, medication management, and more."
   canonical={canonical}
 >
   <BreadcrumbJsonLd
@@ -41,110 +41,104 @@ const faqs = [
     ]}
   />
 
-  <section class="mx-auto max-w-3xl px-4 py-16">
-    <div class="stack-16">
-      <!-- Hero -->
-      <header>
-        <h1 class="text-4xl font-bold text-secondary">
-          LGBTQ+ Friendly Pediatric Provider — Las Vegas
-        </h1>
-        <p class="mt-6 text-lg text-gray-700">
-          Compassionate, confidential, and LGBTQ+‑affirming care for adolescents
-          and young adults (ages 11–21) in Las Vegas—delivered by telehealth for
-          convenience and privacy.
-        </p>
-      </header>
+  <section class="mx-auto max-w-3xl space-y-12 px-4 py-20">
+    <!-- Hero -->
+    <header>
+      <h1 class="text-4xl font-bold text-secondary">
+        LGBTQ+ Friendly Pediatric Provider — Las Vegas
+      </h1>
+      <p class="mt-6 text-lg text-gray-700">
+        Inclusive, confidential, and LGBTQ+-affirming pediatric care for teens
+        and young adults (ages 11–21). Serving Las Vegas and all of Nevada —
+        in-person or via secure telehealth.
+      </p>
+    </header>
 
-      <!-- Care we provide -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">Care we provide</h2>
-        <ul class="list-disc space-y-1 pl-6 text-gray-800">
-          <li>Gender‑affirming support and care coordination</li>
-          <li>Reproductive & sexual health counseling and treatment</li>
-          <li>Mental health evaluations and treatment planning</li>
-          <li>Medication management & refills when appropriate</li>
-          <li>School & sports forms (as clinically appropriate)</li>
-        </ul>
-      </section>
+    <!-- Care We Provide -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">Care We Provide</h2>
+      <ul class="list-disc space-y-1 pl-6 text-gray-800">
+        <li>Affirming support and care coordination</li>
+        <li>Reproductive & sexual health counseling and treatment</li>
+        <li>Mental health evaluations and treatment planning</li>
+        <li>Medication management & refills when appropriate</li>
+        <li>School & sports forms (middle and high school)</li>
+      </ul>
+    </section>
 
-      <!-- How visits work -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">How visits work</h2>
-        <ol class="list-decimal space-y-2 pl-6 text-gray-800">
-          <li>
-            Book online via our
-            <a class="underline" href={scheduling}>scheduling portal</a>.
-          </li>
-          <li>Complete secure intake forms after booking.</li>
-          <li>
-            Join your video visit from a private, well‑lit location in Nevada.
-          </li>
-        </ol>
-      </section>
+    <!-- How Visits Work -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">How Visits Work</h2>
+      <ol class="list-decimal space-y-2 pl-6 text-gray-800">
+        <li>
+          Book online via our
+          <a class="underline" href={scheduling}>scheduling portal</a>.
+        </li>
+        <li>Complete secure intake forms after booking.</li>
+        <li>
+          We'll see you in our Las Vegas location or join your video visit from
+          a private, well-lit location in Nevada.
+        </li>
+      </ol>
+    </section>
 
-      <!-- CTA -->
-      <div>
-        <a
-          href={scheduling}
-          class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
-          aria-label="Schedule an LGBTQ+‑affirming pediatric visit in Las Vegas"
-        >
-          Schedule an appointment
-        </a>
-      </div>
-
-      <!-- Related services -->
-      <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
-        <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
-        <ul class="list-disc space-y-2 pl-6 text-gray-800">
-          <li>
-            <a
-              class="underline"
-              href="/services/teen-young-adult-healthcare-las-vegas/"
-              >Teen & Young Adult Healthcare — Las Vegas</a
-            >
-          </li>
-          <li>
-            <a
-              class="underline"
-              href="/services/pediatric-nurse-practitioner-las-vegas/"
-              >Pediatric Nurse Practitioner — Las Vegas</a
-            >
-          </li>
-          <li>
-            <a class="underline" href="/services/adolescent-medicine-nevada/"
-              >Adolescent Medicine — Nevada</a
-            >
-          </li>
-        </ul>
-      </aside>
-
-      <!-- FAQ -->
-      <section aria-labelledby="faq-heading">
-        <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
-          Frequently asked questions
-        </h2>
-        <dl class="space-y-6">
-          {
-            faqs.map(({ q, a }) => (
-              <div>
-                <dt class="font-medium text-gray-900">{q}</dt>
-                <dd class="mt-1 text-gray-700">{a}</dd>
-              </div>
-            ))
-          }
-        </dl>
-      </section>
-
-      <!-- Back link with divider -->
-      <div class="border-t border-gray-200 pt-6">
-        <p class="text-sm">
-          <a class="underline" href="/services/">← Back to all services</a>
-        </p>
-      </div>
+    <!-- CTA -->
+    <div class="mb-12 mt-12">
+      <a
+        href={scheduling}
+        class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
+        aria-label="Schedule an LGBTQ+‑affirming pediatric visit in Las Vegas"
+      >
+        Schedule an appointment
+      </a>
     </div>
 
-    <!-- JSON-LD -->
-    <FAQJsonLd faqs={faqs} canonical={canonical} />
+    <!-- Related services -->
+    <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
+      <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
+      <ul class="list-disc space-y-2 pl-6 text-gray-800">
+        <li>
+          <a
+            class="underline"
+            href="/services/teen-young-adult-healthcare-las-vegas/"
+            >Teen & Young Adult Healthcare — Las Vegas and statewide Nevada via
+            Telehealth</a
+          >
+        </li>
+        <li>
+          <a
+            class="underline"
+            href="/services/pediatric-nurse-practitioner-las-vegas/"
+            >Pediatric Nurse Practitioner — Las Vegas and statewide Nevada via
+            Telehealth</a
+          >
+        </li>
+        <li>
+          <a class="underline" href="/services/adolescent-medicine-nevada/"
+            >Adolescent Medicine — Las Vegas and statewide Nevada via Telehealth</a
+          >
+        </li>
+      </ul>
+    </aside>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading" class="mb-12 mt-12">
+      <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
+        Frequently asked questions
+      </h2>
+      <dl class="space-y-6">
+        {
+          faqs.map(({ q, a }) => (
+            <div>
+              <dt class="font-medium text-gray-900">{q}</dt>
+              <dd class="mt-1 text-gray-700">{a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
   </section>
+
+  <!-- JSON-LD -->
+  <FAQJsonLd faqs={faqs} canonical={canonical} />
 </BaseLayout>

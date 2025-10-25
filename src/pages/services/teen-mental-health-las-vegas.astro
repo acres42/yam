@@ -11,7 +11,7 @@ const canonical =
 
 const faqs = [
   {
-    q: "Do you provide mental health evaluations by telehealth in Las Vegas?",
+    q: "Do you provide mental health evaluations in Las Vegas and statewide Nevada via telehealth?",
     a: "Yes. We evaluate common concerns such as anxiety, depression, attention concerns, and stress—via secure video when appropriate.",
   },
   {
@@ -26,8 +26,8 @@ const faqs = [
 ---
 
 <BaseLayout
-  title="Teen Mental Health — Las Vegas (Telehealth) | Young Adult Medicine"
-  description="Telehealth mental health evaluations and medication management for teens and young adults in Las Vegas. Compassionate, evidence‑based care—statewide in Nevada."
+  title="Teen Mental Health | Young Adult Medicine"
+  description="Telehealth mental health evaluations and medication management for teens and young adults in Las Vegas. Compassionate, evidence‑based care—statewide in Nevada via telehealth."
   canonical={canonical}
 >
   <BreadcrumbJsonLd
@@ -38,104 +38,103 @@ const faqs = [
     ]}
   />
 
-  <section class="mx-auto max-w-3xl px-4 py-16">
-    <div class="stack-16">
-      <!-- Hero -->
-      <header>
-        <h1 class="text-4xl font-bold text-secondary">
-          Teen Mental Health — Las Vegas
-        </h1>
-        <p class="mt-6 text-lg text-gray-700">
-          Compassionate mental health evaluations and follow‑up for adolescents
-          and young adults (ages 11–21) in Las Vegas—via secure telehealth when
-          appropriate.
-        </p>
-      </header>
+  <section class="mx-auto max-w-3xl space-y-12 px-4 py-20">
+    <!-- Hero -->
+    <header>
+      <h1 class="text-4xl font-bold text-secondary">Teen Mental Health</h1>
+      <p class="text-lg text-gray-700">
+        Compassionate mental health evaluations and ongoing support for
+        adolescents and young adults (ages 11–21) in Las Vegas and statewide
+        Nevada — available in person or via secure telehealth.
+      </p>
+    </header>
 
-      <!-- What we evaluate and support -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">What we evaluate & support</h2>
-        <ul class="list-disc space-y-1 pl-6 text-gray-800">
-          <li>Anxiety, depression, stress, and adjustment concerns</li>
-          <li>Attention concerns and school difficulties</li>
-          <li>Sleep issues, mood changes, and coping skills</li>
-          <li>Medication management and monitoring when appropriate</li>
-          <li>Care coordination and referrals to therapy/psychiatry</li>
-        </ul>
-      </section>
+    <!-- What We Evaluate & Support -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">What We Evaluate & Support</h2>
+      <ul class="list-disc space-y-1 pl-6 text-gray-800">
+        <li>Anxiety, depression, stress, and adjustment concerns</li>
+        <li>Attention concerns and school difficulties</li>
+        <li>Sleep issues, mood changes, and coping skills</li>
+        <li>Medication management and monitoring when appropriate</li>
+        <li>Care coordination and referrals to therapy/psychiatry</li>
+      </ul>
+    </section>
 
-      <!-- How visits work -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">How visits work</h2>
-        <ol class="list-decimal space-y-2 pl-6 text-gray-800">
-          <li>
-            Book online via our
-            <a class="underline" href={scheduling}>scheduling portal</a>.
-          </li>
-          <li>Complete secure intake forms after booking.</li>
-          <li>Join your video visit from a private, well‑lit location.</li>
-        </ol>
-      </section>
+    <!-- How Visits Work -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">How Visits Work</h2>
+      <ol class="list-decimal space-y-2 pl-6 text-gray-800">
+        <li>
+          Book online via our
+          <a class="underline" href={scheduling}>scheduling portal</a>.
+        </li>
+        <li>Complete secure intake forms after booking.</li>
+        <li>
+          We'll see you in our Las Vegas location or join your video visit from
+          a private, well-lit location in Nevada.
+        </li>
+      </ol>
+    </section>
 
-      <!-- CTA -->
-      <div>
-        <a
-          href={scheduling}
-          class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
-          aria-label="Schedule a teen mental health evaluation in Las Vegas"
-        >
-          Schedule an evaluation
-        </a>
-      </div>
-
-      <!-- Related services -->
-      <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
-        <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
-        <ul class="list-disc space-y-2 pl-6 text-gray-800">
-          <li>
-            <a class="underline" href="/services/pediatric-telehealth-nevada/"
-              >Pediatric Telehealth — Nevada</a
-            >
-          </li>
-          <li>
-            <a class="underline" href="/services/adolescent-medicine-nevada/"
-              >Adolescent Medicine — Nevada</a
-            >
-          </li>
-          <li>
-            <a class="underline" href="/services/urgent-care-las-vegas/"
-              >Urgent Care — Las Vegas</a
-            >
-          </li>
-        </ul>
-      </aside>
-
-      <!-- FAQ -->
-      <section aria-labelledby="faq-heading">
-        <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
-          Frequently asked questions
-        </h2>
-        <dl class="space-y-6">
-          {
-            faqs.map(({ q, a }) => (
-              <div>
-                <dt class="font-medium text-gray-900">{q}</dt>
-                <dd class="mt-1 text-gray-700">{a}</dd>
-              </div>
-            ))
-          }
-        </dl>
-      </section>
-
-      <!-- Back link with divider -->
-      <div class="border-t border-gray-200 pt-6">
-        <p class="text-sm">
-          <a class="underline" href="/services/">← Back to all services</a>
-        </p>
-      </div>
+    <!-- CTA -->
+    <div class="mb-12 mt-12">
+      <a
+        href={scheduling}
+        class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
+        aria-label="Schedule a teen mental health evaluation in Las Vegas"
+      >
+        Schedule an evaluation
+      </a>
     </div>
 
-    <!-- JSON-LD -->
-    <FAQJsonLd faqs={faqs} canonical={canonical} />
+    <!-- Related services -->
+    <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
+      <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
+      <ul class="list-disc space-y-2 pl-6 text-gray-800">
+        <li>
+          <a class="underline" href="/services/pediatric-telehealth-nevada/"
+            >Pediatric Telehealth — Nevada</a
+          >
+        </li>
+        <li>
+          <a class="underline" href="/services/adolescent-medicine-nevada/"
+            >Adolescent Medicine — Nevada</a
+          >
+        </li>
+        <li>
+          <a class="underline" href="/services/urgent-care-las-vegas/"
+            >Urgent Care — Las Vegas</a
+          >
+        </li>
+      </ul>
+    </aside>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading" class="mb-12 mt-12">
+      <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
+        Frequently Asked Questions
+      </h2>
+      <dl class="space-y-6">
+        {
+          faqs.map(({ q, a }) => (
+            <div>
+              <dt class="font-medium text-gray-900">{q}</dt>
+              <dd class="mt-1 text-gray-700">{a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <!-- Back link with divider -->
+    <div class="mt-12 border-t border-gray-200 pt-6">
+      <p class="text-sm">
+        <a class="underline" href="/services/">← Back to all services</a>
+      </p>
+    </div>
   </section>
+
+  <!-- JSON-LD -->
+  <FAQJsonLd faqs={faqs} canonical={canonical} />
 </BaseLayout>

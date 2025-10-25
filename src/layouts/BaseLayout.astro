@@ -17,7 +17,16 @@ const {
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Young Adult Medicine, PLLC" />
+    <meta name="publisher" content="Young Adult Medicine, PLLC" />
+    <meta
+      name="keywords"
+      content="pediatrics, adolescent medicine, young adult care, teen health, Las Vegas, Nevada, pediatric specialist, adolescent specialist, statewide telehealth"
+    />
+    <meta property="og:locale" content="en_US" />
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -34,7 +43,6 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage ?? "/og-default.jpg"} />
     <SiteJsonLd />
-    <title>{title}</title>
   </head>
 
   <body class="bg-bg font-sans text-text">

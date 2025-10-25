@@ -12,7 +12,7 @@ const canonical =
 const faqs = [
   {
     q: "What ages are eligible for pediatric telehealth?",
-    a: "We serve patients ages 11–21 for a wide range of concerns, from routine check-ins to urgent issues appropriate for virtual care.",
+    a: "We serve patients ages 5–21 for a wide range of concerns, from routine check-ins to urgent issues appropriate for in-person or virtual care.",
   },
   {
     q: "Is telehealth care secure and private?",
@@ -27,7 +27,7 @@ const faqs = [
 
 <BaseLayout
   title="Pediatric Telehealth — Nevada | Young Adult Medicine"
-  description="Statewide pediatric telehealth for ages 11–21. Secure video visits for mental health, reproductive health, urgent care, medication management, and more."
+  description="Statewide pediatric telehealth for ages 5–21. Secure video visits for mental health, reproductive health, urgent care, medication management, and more."
   canonical={canonical}
 >
   <BreadcrumbJsonLd
@@ -38,94 +38,92 @@ const faqs = [
     ]}
   />
 
-  <section class="mx-auto max-w-3xl px-4 py-16">
-    <div class="stack-16">
-      <!-- Hero -->
-      <header>
-        <h1 class="text-4xl font-bold text-secondary">
-          Pediatric Telehealth — Nevada
-        </h1>
-        <p class="mt-6 text-lg text-gray-700">
-          Convenient, compassionate pediatric telehealth visits for adolescents
-          and young adults ages 11–21. We provide statewide care with the same
-          quality and privacy you’d expect from an in-office visit.
-        </p>
-      </header>
+  <section class="mx-auto max-w-3xl space-y-12 px-4 py-20">
+    <!-- Hero -->
+    <header>
+      <h1 class="text-4xl font-bold text-secondary">
+        Pediatric Telehealth — Nevada
+      </h1>
+      <p class="text-lg text-gray-700">
+        Compassionate, convenient pediatric telehealth visits for patients ages
+        5–21. Secure, statewide care with the same quality, privacy, and
+        attention as in-person visits.
+      </p>
+    </header>
 
-      <!-- How it works -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">How it works</h2>
-        <ol class="list-decimal space-y-2 pl-6 text-gray-800">
-          <li>
-            Request a visit through our
-            <a class="underline" href={scheduling}>scheduling portal</a>.
-          </li>
-          <li>Complete secure intake forms online before your appointment.</li>
-          <li>
-            Meet with our provider via secure video from anywhere in Nevada.
-          </li>
-        </ol>
-      </section>
+    <!-- How It Works -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">How It Works</h2>
+      <ol class="list-decimal space-y-2 pl-6 text-gray-800">
+        <li>
+          Request a visit through our
+          <a class="underline" href={scheduling}>scheduling portal</a>.
+        </li>
+        <li>Complete secure intake forms online before your appointment.</li>
+        <li>
+          Meet with our provider via secure video from anywhere in Nevada.
+        </li>
+      </ol>
+    </section>
 
-      <!-- CTA -->
-      <div>
-        <a
-          href={scheduling}
-          class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
-          aria-label="Schedule a pediatric telehealth appointment in Nevada"
-        >
-          Schedule a telehealth appointment
-        </a>
-      </div>
+    <!-- CTA -->
+    <div class="mb-12 mt-12">
+      <a
+        href={scheduling}
+        class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
+        aria-label="Schedule a pediatric telehealth appointment in Nevada"
+      >
+        Schedule a telehealth appointment
+      </a>
+    </div>
 
-      <!-- Related services -->
-      <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
-        <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
-        <ul class="list-disc space-y-2 pl-6 text-gray-800">
-          <li>
-            <a class="underline" href="/services/telehealth-medicine/">
-              Telehealth Medicine — Nevada
-            </a>
-          </li>
-          <li>
-            <a class="underline" href="/services/adolescent-medicine-nevada/">
-              Adolescent Medicine — Nevada
-            </a>
-          </li>
-          <li>
-            <a
-              class="underline"
-              href="/services/pediatric-primary-care-ages-11-21/"
-            >
-              Pediatric Primary Care — Ages 11–21
-            </a>
-          </li>
-        </ul>
-      </aside>
+    <!-- Related services -->
+    <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
+      <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
+      <ul class="list-disc space-y-2 pl-6 text-gray-800">
+        <li>
+          <a class="underline" href="/services/telehealth-medicine/">
+            Telehealth Medicine — Nevada
+          </a>
+        </li>
+        <li>
+          <a class="underline" href="/services/adolescent-medicine-nevada/">
+            Adolescent Medicine — Nevada
+          </a>
+        </li>
+        <li>
+          <a
+            class="underline"
+            href="/services/pediatric-primary-care-ages-11-21/"
+          >
+            Pediatric Primary Care — Ages 11–21
+          </a>
+        </li>
+      </ul>
+    </aside>
 
-      <!-- FAQ -->
-      <section aria-labelledby="faq-heading">
-        <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
-          Frequently asked questions
-        </h2>
-        <dl class="space-y-6">
-          {
-            faqs.map(({ q, a }) => (
-              <div>
-                <dt class="font-medium text-gray-900">{q}</dt>
-                <dd class="mt-1 text-gray-700">{a}</dd>
-              </div>
-            ))
-          }
-        </dl>
-      </section>
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading" class="mb-12 mt-12">
+      <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
+        Frequently Asked Questions
+      </h2>
+      <dl class="space-y-6">
+        {
+          faqs.map(({ q, a }) => (
+            <div>
+              <dt class="font-medium text-gray-900">{q}</dt>
+              <dd class="mt-1 text-gray-700">{a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
 
-      <!-- Back link -->
-      <div class="border-t border-gray-200 pt-6">
-        <p class="text-sm">
-          <a class="underline" href="/services/">← Back to all services</a>
-        </p>
-      </div>
+    <!-- Back link -->
+    <div class="border-t border-gray-200 pt-6">
+      <p class="text-sm">
+        <a class="underline" href="/services/">← Back to all services</a>
+      </p>
     </div>
 
     <!-- JSON-LD -->

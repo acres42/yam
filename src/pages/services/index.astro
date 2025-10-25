@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const modules = import.meta.glob("./*.{astro,md,mdx}", { eager: true });
+const modules: Record<string, any> = import.meta.glob("./*.{astro,md,mdx}", {
+  eager: true,
+});
 
 function slugToTitle(slug: string) {
   const withSpaces = slug.replace(/-/g, " ");
   return withSpaces
     .replace(/\b\w/g, (c) => c.toUpperCase())
-    .replace(/\bNevada Telehealth\b/i, "(Nevada Telehealth)");
+    .replace(/\bNevada Telehealth\b/i, "Peditric & Adolescent Specialists");
 }
 
 const files = Object.keys(modules)
@@ -17,7 +19,7 @@ type Item = { href: string; title: string; blurb?: string };
 
 const services: Item[] = files.map((p) => {
   const slug = p.replace("./", "").replace(/\.(astro|mdx?|md)$/, "");
-  const href = `/services/${slug}`;
+  const href = `/services/${slug}/`;
   const meta = modules[p]?.page ?? modules[p]?.frontmatter ?? {};
   const title = meta.title ?? slugToTitle(slug);
   const blurb = meta.description ?? meta.blurb ?? undefined; // falls back to undefined if not provided
@@ -29,16 +31,17 @@ const canonical = "https://www.youngadultmedicine.com/services/";
 ---
 
 <BaseLayout
-  title="Services | Young Adult Medicine (Nevada Telehealth)"
-  description="Explore adolescent and young adult telehealth services available statewide in Nevada: reproductive health, medication management, mental health evaluations, and sports physicals."
+  title="Services | Young Adult Medicine"
+  description="Explore pediatric and adolescent medicine services available statewide in Nevada: reproductive health, medication management, mental health evaluations, and sports physicals."
   canonical={canonical}
 >
   <section class="mx-auto max-w-5xl px-4 py-16">
     <header class="mb-10">
       <h1 class="mb-4 text-4xl font-bold text-secondary">Services</h1>
       <p class="text-lg text-gray-700">
-        Statewide Nevada telehealth for adolescents and young adults. Choose a
-        service to learn what to expect and how to book.
+        In person visits in Las Vegas or statewide Nevada telehealth for
+        pediatric & adolescents. Choose a service to learn what to expect and
+        how to book.
       </p>
     </header>
 

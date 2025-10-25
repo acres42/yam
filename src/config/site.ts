@@ -15,9 +15,12 @@ export interface SiteConfig {
 }
 
 export const SITE: SiteConfig = {
-  title: import.meta.env.PUBLIC_SITE_TITLE || "Young Adult Medicine",
+  title:
+    import.meta.env.PUBLIC_SITE_TITLE ||
+    "Young Adult Medicine | Pediatrics & Adolescent Specialists",
   description:
-    import.meta.env.PUBLIC_SITE_DESCRIPTION || "Your health is our priority.",
+    import.meta.env.PUBLIC_SITE_DESCRIPTION ||
+    "Expert pediatric and adolescent specialist care in Las Vegas and statewide Nevada. Primary care, mental health, reproductive health, and urgent care for ages 5–21.",
   address:
     import.meta.env.PUBLIC_CONTACT_ADDRESS ||
     "9330 West Sahara Ave, Suite 230, Las Vegas, NV 89117",

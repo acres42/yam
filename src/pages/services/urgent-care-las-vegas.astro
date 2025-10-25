@@ -11,8 +11,8 @@ const canonical =
 
 const faqs = [
   {
-    q: "Do you offer urgent care by telehealth in Las Vegas?",
-    a: "Yes. We provide same‑day and next‑day virtual urgent care for teens and young adults in Las Vegas and across Nevada, when clinically appropriate.",
+    q: "Do you offer urgent care in Las Vegas and statewide Nevada via telehealth?",
+    a: "Yes. We provide same‑day and next‑day virtual urgent care for patients 5-21+ in Las Vegas and across Nevada, when clinically appropriate.",
   },
   {
     q: "What kinds of urgent issues can be handled virtually?",
@@ -20,14 +20,14 @@ const faqs = [
   },
   {
     q: "What ages do you see?",
-    a: "Typically ages 11–21. If you’re unsure whether your concern is appropriate for telehealth, contact us and we’ll help you decide.",
+    a: "Typically ages 5–21. If you’re unsure whether your concern is appropriate for telehealth, contact us and we’ll help you decide.",
   },
 ];
 ---
 
 <BaseLayout
   title="Urgent Care — Las Vegas (Telehealth) | Young Adult Medicine"
-  description="Same‑day and next‑day telehealth urgent care for teens and young adults in Las Vegas. Compassionate, evidence‑based guidance—statewide in Nevada."
+  description="Same‑day and next‑day telehealth urgent care for children to young adults in our Las Vegas location or statewide Nevada via telehealth."
   canonical={canonical}
 >
   <BreadcrumbJsonLd
@@ -38,121 +38,116 @@ const faqs = [
     ]}
   />
 
-  <section class="mx-auto max-w-3xl px-4 py-16">
-    <div class="stack-16">
-      <!-- Hero -->
-      <header>
-        <h1 class="text-4xl font-bold text-secondary">
-          Urgent Care — Las Vegas
-        </h1>
-        <p class="mt-6 text-lg text-gray-700">
-          Fast, convenient telehealth for urgent—but non‑emergency—concerns in
-          Las Vegas. We serve adolescents and young adults (ages 11–21) with
-          clear guidance and a plan.
-        </p>
-      </header>
+  <section class="mx-auto max-w-3xl space-y-12 px-4 py-20">
+    <!-- Hero -->
+    <header>
+      <h1 class="text-4xl font-bold text-secondary">Urgent Care — Las Vegas</h1>
+      <p class="mt-6 text-lg text-gray-700">
+        Fast, compassionate urgent care for patients ages 5–21. Same-day and
+        next-day telehealth appointments available in Las Vegas and statewide
+        Nevada, when clinically appropriate.
+      </p>
+    </header>
 
-      <!-- What we can handle virtually -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">
-          What we can treat by telehealth
-        </h2>
-        <ul class="list-disc space-y-1 pl-6 text-gray-800">
-          <li>Rashes, pink eye, minor skin concerns</li>
-          <li>Mild respiratory or GI symptoms (when safe for virtual care)</li>
-          <li>UTI symptoms (assessment and treatment plan as appropriate)</li>
-          <li>
-            Medication questions and refills (when clinically appropriate)
-          </li>
-          <li>Injury triage and next‑step guidance</li>
-        </ul>
-      </section>
+    <!-- What we can handle virtually -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">
+        What We Can Treat by Telehealth
+      </h2>
+      <ul class="list-disc space-y-1 pl-6 text-gray-800">
+        <li>Rashes, pink eye, minor skin concerns</li>
+        <li>Mild respiratory or GI symptoms (when safe for virtual care)</li>
+        <li>UTI symptoms (assessment and treatment plan as appropriate)</li>
+        <li>Medication questions and refills (when clinically appropriate)</li>
+        <li>Injury triage and next‑step guidance</li>
+      </ul>
+    </section>
 
-      <!-- When to go in-person / emergency -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">
-          When in‑person or emergency care is needed
-        </h2>
-        <p class="text-gray-800">
-          Severe pain, trouble breathing, chest pain, dehydration, head injury,
-          or any rapidly worsening symptoms require in‑person evaluation. Call
-          911 for emergencies.
-        </p>
-      </section>
+    <!-- When to go in-person / emergency -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">
+        When In‑Person or Emergency Care Is Needed
+      </h2>
+      <p class="text-gray-800">
+        Severe pain, trouble breathing, chest pain, dehydration, head injury, or
+        any rapidly worsening symptoms require in‑person evaluation. Call 911
+        for emergencies.
+      </p>
+    </section>
 
-      <!-- How it works -->
-      <section>
-        <h2 class="mb-4 text-2xl font-semibold">How a visit works</h2>
-        <ol class="list-decimal space-y-2 pl-6 text-gray-800">
-          <li>
-            Book online via our
-            <a class="underline" href={scheduling}>scheduling portal</a>.
-          </li>
-          <li>Complete secure intake forms sent after booking.</li>
-          <li>
-            Join your video visit from a private, well‑lit location in Nevada.
-          </li>
-        </ol>
-      </section>
+    <!-- How it works -->
+    <section>
+      <h2 class="mb-4 text-2xl font-semibold">How a Visit Works</h2>
+      <ol class="list-decimal space-y-2 pl-6 text-gray-800">
+        <li>
+          Book online via our
+          <a class="underline" href={scheduling}>scheduling portal</a>.
+        </li>
+        <li>Complete secure intake forms sent after booking.</li>
+        <li>
+          We'll see you in our Las Vegas location or join your video visit from
+          a private, well-lit location in Nevada.
+        </li>
+      </ol>
+    </section>
 
-      <!-- CTA -->
-      <div>
-        <a
-          href={scheduling}
-          class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
-          aria-label="Schedule a telehealth urgent care appointment in Las Vegas"
-        >
-          Schedule urgent care
-        </a>
-      </div>
+    <!-- CTA -->
+    <div class="mb-12 mt-12">
+      <a
+        href={scheduling}
+        class="focus:ring-secondary/40 inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-white shadow transition hover:bg-primary focus:outline-none focus:ring-2"
+        aria-label="Schedule a telehealth urgent care appointment in Las Vegas"
+      >
+        Schedule urgent care
+      </a>
+    </div>
 
-      <!-- Related services -->
-      <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
-        <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
-        <ul class="list-disc space-y-2 pl-6 text-gray-800">
-          <li>
-            <a
-              class="underline"
-              href="/services/teen-young-adult-healthcare-las-vegas/"
-              >Teen & Young Adult Healthcare — Las Vegas</a
-            >
-          </li>
-          <li>
-            <a class="underline" href="/services/pediatric-telehealth-nevada/"
-              >Pediatric Telehealth — Nevada</a
-            >
-          </li>
-          <li>
-            <a class="underline" href="/services/adolescent-medicine-nevada/"
-              >Adolescent Medicine — Nevada</a
-            >
-          </li>
-        </ul>
-      </aside>
+    <!-- Related services -->
+    <aside class="rounded-xl bg-gray-50 p-6 shadow-sm ring-1 ring-gray-200">
+      <h2 class="mb-4 text-2xl font-semibold">Related services</h2>
+      <ul class="list-disc space-y-2 pl-6 text-gray-800">
+        <li>
+          <a
+            class="underline"
+            href="/services/teen-young-adult-healthcare-las-vegas/"
+            >Teen & Young Adult Healthcare — Las Vegas</a
+          >
+        </li>
+        <li>
+          <a class="underline" href="/services/pediatric-telehealth-nevada/"
+            >Pediatric Telehealth — Nevada</a
+          >
+        </li>
+        <li>
+          <a class="underline" href="/services/adolescent-medicine-nevada/"
+            >Adolescent Medicine — Nevada</a
+          >
+        </li>
+      </ul>
+    </aside>
 
-      <!-- FAQ -->
-      <section aria-labelledby="faq-heading">
-        <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
-          Frequently asked questions
-        </h2>
-        <dl class="space-y-6">
-          {
-            faqs.map(({ q, a }) => (
-              <div>
-                <dt class="font-medium text-gray-900">{q}</dt>
-                <dd class="mt-1 text-gray-700">{a}</dd>
-              </div>
-            ))
-          }
-        </dl>
-      </section>
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading" class="mb-12 mt-12">
+      <h2 id="faq-heading" class="mb-6 text-2xl font-semibold">
+        Frequently Asked Questions
+      </h2>
+      <dl class="space-y-6">
+        {
+          faqs.map(({ q, a }) => (
+            <div>
+              <dt class="font-medium text-gray-900">{q}</dt>
+              <dd class="mt-1 text-gray-700">{a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
 
-      <!-- Back link with divider -->
-      <div class="border-t border-gray-200 pt-6">
-        <p class="text-sm">
-          <a class="underline" href="/services/">← Back to all services</a>
-        </p>
-      </div>
+    <!-- Back link with divider -->
+    <div class="mt-12 border-t border-gray-200 pt-6">
+      <p class="text-sm">
+        <a class="underline" href="/services/">← Back to all services</a>
+      </p>
     </div>
 
     <!-- JSON-LD -->

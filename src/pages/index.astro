@@ -5,23 +5,25 @@ import hello_there from "../assets/hero/hello_there.jpg";
 import { CommercialInsurance } from "@/components/CommercialInsurance";
 import { SITE } from "../config/site";
 
-const { scheduling } = SITE;
+const { address, scheduling } = SITE;
 ---
 
 <head>
-  <title>Nevada Adolescent Telehealth | Young Adult Medicine</title>
+  <title>
+    Pediatrics & Adolescent Specialists Nevada | Young Adult Medicine
+  </title>
   <meta
     name="description"
-    content="Statewide Nevada telehealth for adolescents and young adults. Compassionate, affirming care for reproductive health, mental health, and sports physicals."
+    content="Compassionate, affirming pediatric and adolescent specialist care for ages 5–21 across Nevada. In-person and telehealth visits for primary care, mental health, and reproductive health."
   />
   <link rel="canonical" href="https://www.youngadultmedicine.com/" />
   <meta
     property="og:title"
-    content="Nevada Adolescent Telehealth | Young Adult Medicine"
+    content="Pediatrics & Adolescent Specialists | Young Adult Medicine Nevada"
   />
   <meta
     property="og:description"
-    content="Statewide Nevada telehealth for adolescents and young adults. Compassionate, affirming care for reproductive health, mental health, and sports physicals."
+    content="Compassionate, affirming pediatric and adolescent specialist care for ages 5–21 across Nevada. In-person and telehealth visits for primary care, mental health, and reproductive health."
   />
   <meta property="og:url" content="https://www.youngadultmedicine.com/" />
   <meta property="og:type" content="website" />
@@ -29,16 +31,18 @@ const { scheduling } = SITE;
   <meta name="twitter:card" content="summary_large_image" />
   <meta
     name="twitter:title"
-    content="Nevada Adolescent Telehealth | Young Adult Medicine"
+    content="Pediatrics & Adolescent Specialists | Young Adult Medicine Nevada"
   />
   <meta
     name="twitter:description"
-    content="Statewide Nevada telehealth for adolescents and young adults. Compassionate, affirming care for reproductive health, mental health, and sports physicals."
+    content="Compassionate, affirming pediatric and adolescent specialist care for ages 5–21 across Nevada. In-person and telehealth visits for primary care, mental health, and reproductive health."
   />
   <meta name="twitter:image" content={hello_there.src} />
 </head>
 
-<BaseLayout title="Nevada Adolescent Telehealth | Young Adult Medicine">
+<BaseLayout
+  title="Pediatrics & Adolescent Specialists | Young Adult Medicine Nevada"
+>
   <section
     id="hero"
     class="bg-cover bg-right px-4 py-10 text-center text-bg sm:py-14 md:py-20"
@@ -46,7 +50,7 @@ const { scheduling } = SITE;
   >
     <img
       src={hello_there.src}
-      alt="Nevada telehealth adolescent medicine visit"
+      alt="Adolescent students smiling"
       class="sr-only"
       aria-hidden="true"
     />
@@ -54,19 +58,18 @@ const { scheduling } = SITE;
       class="mx-auto max-w-3xl rounded-md bg-black/50 px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-12"
     >
       <h1 class="mb-3 text-2xl font-extrabold sm:text-3xl md:text-4xl">
-        Young Adult Medicine
+        Pediatrics & Adolescent Specialist Care
       </h1>
       <p class="mb-6 text-base sm:text-lg md:text-xl">
-        Compassionate, affirming care for patients from 5&#45;21+.<br />
-        In person visits: {SITE.address}<br />
-        Telehealth visits available in ALL of Nevada.
+        Comprehensive, affirming care for patients ages 5 to 21. Visit our Las
+        Vegas office at {address} or connect anywhere in Nevada via telehealth.
       </p>
       <a
         href={scheduling}
         target="_blank"
         class="inline-block rounded bg-bg px-5 py-2.5 font-semibold text-secondary shadow transition hover:text-primary sm:px-6 sm:py-3"
       >
-        Book an Appointment
+        Schedule an Appointment
       </a>
     </div>
   </section>

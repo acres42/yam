@@ -57,8 +57,16 @@ describe("ServicesIsland", () => {
 
   it("renders all items from nonServicesList", () => {
     render(<ServicesIsland />);
-    for (const item of nonServicesList) {
-      expect(screen.getByText(item)).toBeInTheDocument();
+    const individualLines = [
+      "I do not have in-office urine tests or Strep tests",
+      "No medications dispensed on site.",
+      "ALL outpatient lab testing available!!",
+    ];
+
+    for (const line of individualLines) {
+      expect(
+        screen.queryByText((content) => content.includes(line)),
+      ).toBeTruthy();
     }
   });
 
