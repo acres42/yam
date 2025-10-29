@@ -28,8 +28,11 @@ export const About: FunctionalComponent<AboutProps> = ({
           decoding="async"
         />
         <p>
-          YAM is a telehealth-first practice serving young adults in Nevada with
-          evidence-based, inclusive care.
+          YAM is a pediatric specialty practice serving children and young
+          adults ages 5 to 21+ in Nevada with compassionate, evidence-based,
+          inclusive care. Visit our Las Vegas office at 9330 West Sahara Ave,
+          Suite 230, Las Vegas, NV 89117, or connect anywhere in Nevada via
+          telehealth.
         </p>
       </div>
 
@@ -45,7 +48,8 @@ export const About: FunctionalComponent<AboutProps> = ({
           Hello! I'm Carey, a board-certified Pediatric Nurse Practitioner with
           over a decade of experience caring for children and teens in emergency
           medicine. I created this practice to offer a more personal,
-          accessible, and empowering approach to healthcare—right from home.
+          accessible, and empowering approach to healthcare: in-person or right
+          from home.
         </p>
       </div>
 
@@ -53,6 +57,19 @@ export const About: FunctionalComponent<AboutProps> = ({
         Whether you're a parent with questions or a teen looking for a safe
         space to talk, my goal is to provide trusted medical care with empathy,
         clarity, and zero judgment.
+      </p>
+
+      <a
+        id="disclaimer"
+        className="block h-0 scroll-mt-24"
+        aria-hidden="true"
+      ></a>
+      <p className="mx-auto max-w-4xl mt-16 mb-24 px-6 py-6 border-t border-gray-200 text-gray-700 leading-relaxed text-sm">
+        <strong>Disclaimer:</strong> Social media content is for general
+        educational purposes only and is not a substitute for professional
+        medical advice, diagnosis, or treatment. Watching or following does not
+        establish a provider-patient relationship. If you have questions about
+        your own health, please consult your healthcare provider.
       </p>
     </section>
   );

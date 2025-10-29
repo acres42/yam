@@ -4,6 +4,7 @@ import Contact from "@/components/Contact";
 
 describe("<Contact />", () => {
   const props = {
+    address: "9330 W Sahara Ave, Ste 230, Las Vegas, NV 89117",
     telephone: "702-703-4917",
     fax: "775-490-0161",
     schedulingLink: "https://example.com/schedule",
@@ -41,19 +42,24 @@ describe("<Contact />", () => {
   });
 
   it("does not render undefined if any props are missing", () => {
-    render(<Contact telephone="" fax="" schedulingLink="" />);
+    render(<Contact address="" telephone="" fax="" schedulingLink="" />);
     expect(screen.queryByText("undefined")).not.toBeInTheDocument();
   });
 
   it("does not render the scheduling link if it's missing", () => {
-    render(<Contact telephone="123" fax="456" schedulingLink="" />);
+    render(<Contact address="" telephone="123" fax="456" schedulingLink="" />);
     const link = screen.queryByRole("link", { name: /book an appointment/i });
     expect(link?.getAttribute("href")).not.toBeTruthy();
   });
 
   it("does not render the telephone link if the telephone is missing", () => {
     render(
-      <Contact telephone="" fax="456" schedulingLink="https://example.com" />,
+      <Contact
+        address=""
+        telephone=""
+        fax="456"
+        schedulingLink="https://example.com"
+      />,
     );
     const phoneLink = screen.queryByRole("link", { name: /702-703-4917/i });
     expect(phoneLink).not.toBeInTheDocument();
@@ -61,7 +67,7 @@ describe("<Contact />", () => {
 
   it("renders an empty container if all props are empty", () => {
     const { container } = render(
-      <Contact telephone="" fax="" schedulingLink="" />,
+      <Contact address="" telephone="" fax="" schedulingLink="" />,
     );
     expect(container).toBeTruthy();
     const telAnchor = container.querySelector('a[href^="tel:"]');

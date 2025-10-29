@@ -9,7 +9,7 @@ describe("<About />", () => {
       screen.getByRole("heading", { name: /all about yam/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/YAM is a telehealth-first practice/i),
+      screen.getByText(/YAM is a pediatric specialty practice/i),
     ).toBeInTheDocument();
     expect(
       screen.getByText(

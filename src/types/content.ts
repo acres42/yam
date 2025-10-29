@@ -48,9 +48,11 @@ export const formsData: { label: string; file: string }[] = Forms;
 
 const insurancesAccepted = {
   Aetna: "Aetna",
-  BlueCrossBlueShield: "Blue Cross Blue Shield",
-  SierraHealthAndLifeHPN: "Sierra Health and Life HPN",
+  BlueCrossBlueShield: "Blue Cross Blue Shield (pending)",
+  HPN: "Health Plan of Nevada (HPN)",
+  Sierra: "Sierra Healthcare Options (SHCO)",
   UnitedHealthcare: "United Healthcare",
+  UMR: "UMR",
 } as const;
 export const commercialInsurancesAccepted: string[] =
   Object.values(insurancesAccepted);
