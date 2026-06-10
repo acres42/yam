@@ -24,6 +24,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@adobe/css-tools": "^4.5.0",
     "@astrojs/check": "^0.9.4",
     "@astrojs/compiler": "^2.12.2",
     "@astrojs/preact": "^4.1.0",

@@ -11,7 +11,7 @@ export default function SiteJsonLd() {
     areaServed: { "@type": "AdministrativeArea", name: "Nevada" },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "9330 West Sahara Ave, Suite 230",
+      streetAddress: "9330 West Sahara Ave, Suite 230A",
       addressLocality: "Las Vegas",
       addressRegion: "NV",
       postalCode: "89117",

@@ -31,7 +31,7 @@ export const About: FunctionalComponent<AboutProps> = ({
           YAM is a pediatric specialty practice serving children and young
           adults ages 5 to 21+ in Nevada with compassionate, evidence-based,
           inclusive care. Visit our Las Vegas office at 9330 West Sahara Ave,
-          Suite 230, Las Vegas, NV 89117, or connect anywhere in Nevada via
+          Suite 230A, Las Vegas, NV 89117, or connect anywhere in Nevada via
           telehealth.
         </p>
       </div>

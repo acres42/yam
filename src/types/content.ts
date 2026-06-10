@@ -1,5 +1,5 @@
 const TelehealthService = {
-  MentalHealth: "In-depth Mental Health Services 12yr and older",
+  MentalHealth: "In-depth Mental Health Services 10yr and older",
   ADHD: "ADHD evaluation and medication management",
   Nutrition: "Nutrition and Sleep Support",
   AnxietyDepressionMoodDisorders:
@@ -48,9 +48,10 @@ export const formsData: { label: string; file: string }[] = Forms;
 
 const insurancesAccepted = {
   Aetna: "Aetna",
-  BlueCrossBlueShield: "Blue Cross Blue Shield (pending)",
-  HPN: "Health Plan of Nevada (HPN)",
+  BlueCrossBlueShield: "Blue Cross Blue Shield",
+  HPN: "Health Plan of Nevada (Pending)",
   Sierra: "Sierra Healthcare Options (SHCO)",
+  Tricare: "Tricare (Pending)",
   UnitedHealthcare: "United Healthcare",
   UMR: "UMR",
 } as const;

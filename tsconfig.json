@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "paths": {
       "@/*": ["src/*"],
       "@tests/*": ["tests/*"]
@@ -23,12 +24,7 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "useDefineForClassFields": true,
-    "types": [
-      "astro/compiler/types",
-      "vite/client",
-      "astro/client",
-      "vitest/globals"
-    ],
+    "types": ["vite/client", "astro/client"],
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
   "include": [

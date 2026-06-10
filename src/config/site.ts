@@ -23,7 +23,7 @@ export const SITE: SiteConfig = {
     "Expert pediatric and adolescent specialist care in Las Vegas and statewide Nevada. Primary care, mental health, reproductive health, and urgent care for ages 5–21.",
   address:
     import.meta.env.PUBLIC_CONTACT_ADDRESS ||
-    "9330 West Sahara Ave, Suite 230, Las Vegas, NV 89117",
+    "9330 West Sahara Ave, Suite 230A, Las Vegas, NV 89117",
   instagramUrl:
     import.meta.env.PUBLIC_INSTAGRAM_URL ||
     "https://www.instagram.com/asknpcarey?utm_source=qr&igsh=eXA5bG1hY3Y3d2o3",
