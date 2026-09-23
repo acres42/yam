@@ -49,9 +49,8 @@ export const formsData: { label: string; file: string }[] = Forms;
 const insurancesAccepted = {
   Aetna: "Aetna",
   BlueCrossBlueShield: "Blue Cross Blue Shield",
-  HPN: "Health Plan of Nevada (Pending)",
+  HPN: "Health Plan of Nevada",
   Sierra: "Sierra Healthcare Options (SHCO)",
-  Tricare: "Tricare (Pending)",
   UnitedHealthcare: "United Healthcare",
   UMR: "UMR",
 } as const;
